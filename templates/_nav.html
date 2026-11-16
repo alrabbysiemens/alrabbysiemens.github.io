@@ -1,3 +1,5 @@
+{% macro nv_ic(k) -%}<svg class="nv-ic" aria-hidden="true" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+{%- if k == 'home' %}<path d="M3 11l9-7 9 7v9H3z"/>{% elif k == 'about' %}<circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/>{% elif k == 'research' %}<path d="M9 3h6M10 3v6L4 20h16l-6-11V3"/>{% elif k == 'writing' %}<path d="M4 20l4-1 11-11-3-3L5 16z"/>{% elif k == 'media' %}<rect x="3" y="7" width="18" height="13" rx="2"/><circle cx="12" cy="13" r="3.5"/><path d="M8 7l2-3h4l2 3"/>{% else %}<rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/>{% endif %}</svg>{%- endmacro %}
 <nav class="topnav wrap" aria-label="Main">
   <a class="brand" href="{{ url('') }}">
     {% include "_brand.html" %}
@@ -10,13 +12,13 @@
     {% for item in nav %}
       {% if item.children %}
       <li class="has-sub{% if section == item.key %} active{% endif %}">
-        <button type="button" class="sub-btn" aria-expanded="false">{{ item.label }}<svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></button>
+        <button type="button" class="sub-btn" aria-expanded="false">{{ nv_ic(item.key) }}<span>{{ item.label }}</span><svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></button>
         <ul class="sub">
           {% for c in item.children %}<li><a href="{{ url(c.href) }}"{% if path == c.href %} aria-current="page"{% endif %}>{% if c.label == "SIEM Lab" %}<span class="siem-word"><b>SIEM</b> <i>Lab</i></span>{% else %}{{ c.label }}{% endif %}</a></li>{% endfor %}
         </ul>
       </li>
       {% else %}
-      <li{% if section == item.key %} class="active"{% endif %}><a href="{{ url(item.href) }}"{% if path == item.href %} aria-current="page"{% endif %}>{{ item.label }}</a></li>
+      <li{% if section == item.key %} class="active"{% endif %}><a href="{{ url(item.href) }}"{% if path == item.href %} aria-current="page"{% endif %}>{{ nv_ic(item.key) }}<span>{{ item.label }}</span></a></li>
       {% endif %}
     {% endfor %}
   </ul>

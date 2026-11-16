@@ -723,3 +723,19 @@ p{margin:0}
 .lab-banner-m{font-size:16px;line-height:1.5}
 .lab-banner-txt small .siem-word{font-size:14px}
 h1 .siem-word{font-size:.95em}
+/* menu icons: phone only */
+.nv-ic{display:none}
+@media (max-width:920px){
+  .nv-ic{display:inline-block;flex:none;color:var(--river)}
+  .menu>li>a,.sub-btn{justify-content:flex-start;gap:10px}
+  .menu>li>a{font:600 16px var(--sans);min-height:48px;padding:0 10px;border-radius:10px}
+  .menu>li.active>a,.menu>li>a[aria-current]{background:var(--river);color:#fff;box-shadow:none}
+  .menu>li.active>a .nv-ic,.menu>li>a[aria-current] .nv-ic{color:#fff}
+  .has-sub{border-top:1px solid var(--line);margin-top:8px;padding-top:6px}
+  .has-sub + li:not(.has-sub){border-top:1px solid var(--line);margin-top:8px;padding-top:6px}
+  .sub-btn,.menu>li.active>.sub-btn{min-height:34px;font:700 11.5px var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--rust);box-shadow:none;background:none;cursor:default;pointer-events:none}
+  .sub-btn .nv-ic{display:inline-block;color:var(--rust);width:15px;height:15px}
+  .sub{margin:0 0 4px 17px;padding:0;border-left:2px solid var(--rule);border-radius:0}
+  .sub a{padding:10px 12px 10px 18px;font-size:15px;color:var(--ink-2);border-radius:0 8px 8px 0}
+  .sub a[aria-current]{background:var(--river-l);color:var(--river);font-weight:600;box-shadow:inset 3px 0 0 var(--river);margin-left:-2px}
+}
