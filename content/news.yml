@@ -1,4 +1,10 @@
 # Latest updates, newest first. The home page shows the top 3.
+# Optional: logo (image path), link (page path like research/siem-lab/), featured: true (highlighted box)
+- date: 2026-11
+  text: "Announcing SIEM Lab - Sustainable Innovation for Environmental Management. A new research lab developing ideas, methods, technologies and solutions to address environmental challenges sustainably. Details and activities coming soon."
+  logo: img/logos/siem-lab.png
+  link: research/siem-lab/
+  featured: true
 - date: 2026-09
   text: Joined BGMEA University of Fashion & Technology as Lecturer, Department of Social Science.
 - date: 2025-11

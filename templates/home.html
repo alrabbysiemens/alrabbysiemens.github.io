@@ -101,7 +101,7 @@
   <div>
     <div class="section-head"><h2>Latest updates</h2></div>
     <ul class="news">
-      {% for n in news %}<li><span class="mono date">{{ n.date|month }}</span><p>{{ n.text }}</p></li>{% endfor %}
+      {% for n in news %}{% if n.featured %}<li class="news-feat"><a href="{{ url(n.link) if n.link else '#' }}">{% if n.logo %}<img src="{{ base }}{{ n.logo|asset }}" alt="" loading="lazy">{% endif %}<span class="mono date">{{ n.date|month }} · <b>NEW</b></span><p>{{ n.text }}</p>{% if n.link %}<span class="news-more">Visit the lab →</span>{% endif %}</a></li>{% else %}<li><span class="mono date">{{ n.date|month }}</span><p>{% if n.link %}<a href="{{ url(n.link) }}">{{ n.text }}</a>{% else %}{{ n.text }}{% endif %}</p></li>{% endif %}{% endfor %}
     </ul>
   </div>
   <div>
