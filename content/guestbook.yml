@@ -2,4 +2,9 @@
 # To publish one: add it here (or in the editing panel) with approved: true.
 # To hide it: set approved: false. To delete it: remove the entry.
 # color (optional): yellow | mint | sky | pink | peach
-[]
+- name: Farhana
+  location: Dhaka
+  message: take love and best wishes
+  date: 16 Nov 2026
+  color: pink
+  approved: true
