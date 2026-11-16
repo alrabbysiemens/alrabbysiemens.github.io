@@ -209,6 +209,8 @@ def icon(label, size=18, mono=False):
     return Markup(f'<svg class="pi" aria-hidden="true" width="{size}" height="{size}" viewBox="0 0 24 24" fill="{fill}"><path d="{i["path"]}"/></svg>')
 
 env.globals["icon"] = icon
+import hashlib
+env.globals["asset_v"] = hashlib.md5((ROOT / "static/css/style.css").read_bytes() + (ROOT / "static/js/site.js").read_bytes()).hexdigest()[:8]
 env.filters["year"] = lambda d: (re.search(r"(19|20)\d\d", str(d or "")) or [""])[0]
 
 NAV = [
