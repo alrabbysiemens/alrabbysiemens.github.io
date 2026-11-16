@@ -1,0 +1,65 @@
+# Your basic details. Edit any line; the site rebuilds automatically.
+name: Al Rabby Siemens
+pronouns: He/Him
+tagline: Geographer studying the wetlands, coasts, rivers and forests of Bangladesh, combining community and Indigenous knowledge with GIS, remote sensing and ecological field data to guide environmental management.
+kicker: Geography & Environment · Dhaka, Bangladesh
+roles:
+  - Lecturer, Department of Social Science, BGMEA University of Fashion & Technology
+location: Dhaka, Bangladesh
+coordinates: 23.81° N · 90.41° E
+email: siemens.47@geography-juniv.edu.bd
+office_email: siemens@buft.edu.bd
+personal_email: alrabbysiemens@gmail.com
+# where "Leave a note" messages are emailed for your approval
+guestbook_email: siemens.47@geography-juniv.edu.bd
+office:
+  room: Room 231, 2nd floor
+  dept: Department of Social Science
+  university: BGMEA University of Fashion & Technology (BUFT)
+  address: Nishatnagar (West side of Uttara), Turag, Dhaka-1230, Bangladesh
+  hours: Sunday to Thursday, 9:00 AM - 5:00 PM
+
+# Short bio shown on the About page
+bio: >-
+  I am a geographer trained at Jahangirnagar University (B.Sc. and M.Sc. in Geography
+  and Environment), now teaching at BGMEA University of Fashion & Technology. My research
+  uses GIS, remote sensing, field surveys and modelling to understand how Bangladesh's
+  wetlands, coasts, forests and cities are changing, and how communities and policy can
+  respond.
+
+research_interests:
+  - Environmental modelling
+  - Ecosystem services
+  - Wetland management
+  - Coastal management
+  - Climate change
+  - Urban land use
+  - Sustainable development
+  - GIS & remote sensing
+  - Geo-ML
+  - Field survey
+
+# Leave a url empty ("") to hide that link from the site.
+links:
+  - label: Google Scholar
+    url: "https://scholar.google.com/citations?user=YCsldzkAAAAJ&hl=en"
+  - label: ResearchGate
+    url: "https://www.researchgate.net/profile/Al-Rabby-Siemens"
+  - label: ORCID
+    url: "https://orcid.org/0009-0000-7810-4000"
+  - label: LinkedIn
+    url: "https://www.linkedin.com/in/al-rabby-siemens/"
+  - label: Facebook
+    url: "https://www.facebook.com/alrabby.siemens/"
+
+# Profile photo: upload to static/img/ and put the file name here, e.g. "img/profile.jpg"
+photo: "img/profile.jpg"
+photo_caption: "Thumbs up from the treetops - one high-ropes segment conquered at BAF Base Camp, Dhaka, Bangladesh (2025)."
+
+# Public CV (remove phone, address and references before uploading), e.g. "cv/Al_Rabby_Siemens_CV.pdf"
+cv_pdf: ""
+
+# Visitor map: paste the ClustrMaps widget code here after you sign up (optional)
+visitor_map_script: ""
+
+site_url: https://alrabbysiemens.github.io

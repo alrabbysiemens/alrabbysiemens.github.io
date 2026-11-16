@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% block kicker %}<p class="crumb mono">RESEARCH / PROJECTS</p>{% endblock %}
+{% block subtitle %}<p class="subtitle">Funded research, fellowships and fieldwork across Bangladesh's wetlands, coasts, forests and cities.</p>{% endblock %}
+{% from "_sec_icons.html" import sec_icon %}
+{% from "_siem.html" import siem_tag %}
+{% block main %}
+{% set sections = [
+  ("assistant", "Research Assistantship", ""),
+  ("research", "Research Projects & Fellowships", ""),
+  ("content", "Educational Content Projects", "Curriculum-aligned content for students in Bangladesh, built and quality-checked at 10 Minute School."),
+  ("field", "Academic Field Reports", "Fieldwork reports submitted to the Department of Geography and Environment, Jahangirnagar University.")] %}
+<div class="wrap proj-wrap">
+  <a class="lab-banner" href="{{ base }}research/siem-lab/">
+    <img src="{{ base }}img/logos/siem-lab.png" alt="SIEM Lab">
+    <span class="lab-banner-txt"><span class="mono lab-new">NEW · COMING SOON</span><span class="lab-banner-m">Developing new ideas, methods, technologies and solutions to address environmental challenges sustainably.</span><small>Research · Innovation · Sustainability - visit <span class="siem-word"><b>SIEM</b> <i>Lab</i></span> →</small></span>
+  </a>
+  <nav class="proj-jump" aria-label="Sections">{% for key, name, note in sections %}<a href="#sec-{{ key }}">{{ name }}</a>{% endfor %}</nav>
+  {% for key, name, note in sections %}
+  <section class="proj-sec" id="sec-{{ key }}">
+    <h2 class="sub-h sec-h">{{ sec_icon(key) }}<span>{{ name }}</span></h2>
+    {% if note %}<p class="muted small sec-note">{{ note }}</p>{% endif %}
+    <div class="project-list">
+    {% for pr in projects if pr.group == key %}
+      {% if key == 'field' %}
+      <article class="project field pj" id="{{ pr.slug }}">
+        <img class="xp-logo" src="{{ base }}{{ 'img/logos/ju.png'|asset }}" alt="" loading="lazy">
+        <div class="pj-body">
+          <p class="eyebrow mono">{{ pr.role|upper }}</p>
+          <h3>{{ pr.title }}</h3>
+          <p class="place">{{ pr.place }}</p>
+          <p class="cite">{{ pr.summary }}</p>
+        </div>
+      </article>
+      {% else %}
+      <article class="project pj" id="{{ pr.slug }}">
+        {% if pr.logo %}<img class="xp-logo" src="{{ base }}{{ pr.logo|asset }}" alt="" loading="lazy">{% else %}<span class="xp-logo pj-ph" aria-hidden="true">{{ pr.org[:1] }}</span>{% endif %}
+        <div class="pj-body">
+          <div class="pj-top"><div><p class="pj-org">{{ pr.org }}</p><h3>{{ pr.role }}</h3>{% if pr.subrole %}<p class="pj-org">{{ pr.subrole }}</p>{% endif %}</div><p class="pj-when mono">{{ pr.dates }}{% if pr.location %}<br>{{ pr.location }}{% endif %}</p></div>
+          {% if pr.title %}<p class="xp-project"><span>{{ 'Project' if key != 'content' else 'Project' }}</span>{{ pr.title }}</p>{% endif %}
+          {% if pr.supervisor %}<p class="pj-sup">{{ pr.supervisor_label or 'Supervisor' }}: {{ pr.supervisor }}</p>{% endif %}
+          {% if pr.bullets %}<ul class="pj-bul">{% for b in pr.bullets %}<li>{{ b }}</li>{% endfor %}</ul>{% endif %}
+          {% if pr.description %}<p class="pj-desc">{{ pr.description }}</p>{% endif %}
+        </div>
+      </article>
+      {% endif %}
+    {% endfor %}
+    </div>
+  </section>
+  {% endfor %}
+</div>
+{% endblock %}

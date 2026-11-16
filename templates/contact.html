@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block kicker %}<p class="crumb mono">CONTACT</p>{% endblock %}
+{% block h1 %}Get in touch{% endblock %}
+{% block subtitle %}<p class="subtitle">For research collaboration, teaching, or questions about my work.</p>{% endblock %}
+{% block main %}
+<div class="wrap contact">
+  <div class="contact-card">
+    <p class="mono small muted mail-h"><svg class="pi" aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>ACADEMIC EMAIL</p>
+    <p class="email-big"><a class="email-link" data-u="{{ p.email.split('@')[0] }}" data-d="{{ p.email.split('@')[1] }}" href="#">{{ p.email.split('@')[0] }} [at] {{ p.email.split('@')[1] }}</a></p>
+    <p class="mail-use">For academic discussion and research collaboration.</p>
+    {% if p.office_email %}<p class="mono small muted mail-h"><svg class="pi" aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>OFFICE EMAIL</p>
+    <p class="email-big"><a class="email-link" data-u="{{ p.office_email.split('@')[0] }}" data-d="{{ p.office_email.split('@')[1] }}" href="#">{{ p.office_email.split('@')[0] }} [at] {{ p.office_email.split('@')[1] }}</a></p>
+    <p class="mail-use">For official and university matters.</p>{% endif %}
+    {% if p.personal_email %}<p class="mono small muted mail-h"><svg class="pi" aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>PERSONAL EMAIL</p>
+    <p class="email-big email-sm"><a class="email-link" data-u="{{ p.personal_email.split('@')[0] }}" data-d="{{ p.personal_email.split('@')[1] }}" href="#">{{ p.personal_email.split('@')[0] }} [at] {{ p.personal_email.split('@')[1] }}</a></p>
+    <p class="mail-use">For personal matters only (not preferred for work).</p>{% endif %}
+    {% if p.office %}<p class="mono small muted mail-h"><svg class="pi" aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-6.5-7-12a7 7 0 0 1 14 0c0 5.5-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>OFFICE</p>
+    <p class="office"><b>{{ p.office.room }}</b><br>{{ p.office.dept }}<br>{{ p.office.university }}<br>{{ p.office.address }}</p>
+    <p class="mono small muted mail-h"><svg class="pi" aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>OFFICE HOURS</p>
+    <p>{{ p.office.hours }}</p>{% endif %}
+    <div class="appt">
+      <p><b>Want to meet?</b> Request an appointment by email and I'll confirm a time.</p>
+      <a class="btn email-link" data-u="{{ (p.office_email or p.email).split('@')[0] }}" data-d="{{ (p.office_email or p.email).split('@')[1] }}" data-subject="Appointment request" data-body="Dear Mr. Siemens,%0D%0A%0D%0AI would like to request an appointment.%0D%0A%0D%0AName:%0D%0APurpose:%0D%0APreferred date and time (Sun-Thu, 9 AM - 5 PM):%0D%0A%0D%0AThank you." href="#">Request an appointment</a>
+    </div>
+  </div>
+  <div>
+    <p class="mono small muted">PROFILES</p>
+    <ul class="profile-links">
+      {% for l in p.links if l.url %}<li><a href="{{ l.url }}" rel="me noopener" target="_blank"><span class="pl">{{ icon(l.label, 24) }}{{ l.label }}</span><span aria-hidden="true">↗</span></a></li>{% endfor %}
+    </ul>
+  </div>
+</div>
+{% endblock %}

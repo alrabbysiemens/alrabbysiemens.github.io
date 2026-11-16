@@ -1,0 +1,19 @@
+{% extends "_about.html" %}
+{% from "_skill_icons.html" import skill_icon %}
+{% block about %}
+<div class="skill-grid">
+  {% for l in language %}
+  <section class="skill skill-lang">
+    <div class="sk-head"><img class="ielts-logo" src="{{ base }}img/logos/ielts.png" alt="IELTS" height="44"><h3>Language · {{ l.test }}</h3></div>
+    <p class="ielts"><b>{{ l.overall }}</b><span>Overall band</span></p>
+    <ul class="bands">{% for k, v in l.bands.items() %}<li><span>{{ k }}</span><b>{{ v }}</b><i style="width:{{ (v|float / 9 * 100)|round(1) }}%"></i></li>{% endfor %}</ul>
+  </section>
+  {% endfor %}
+  {% for s in skills %}
+  <section class="skill">
+    <div class="sk-head">{{ skill_icon(s.icon) }}<h3>{{ s.field }}</h3></div>
+    <ul class="tags">{% for i in s['items'] %}<li>{{ i }}</li>{% endfor %}</ul>
+  </section>
+  {% endfor %}
+</div>
+{% endblock %}

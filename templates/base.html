@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="{% block lang %}en{% endblock %}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% if title %}{{ title }} · {% endif %}{{ p.name }}</title>
+<meta name="description" content="{% block description %}{{ p.name }} - {{ p.tagline }}{% endblock %}">
+<meta name="author" content="{{ p.name }}">
+<link rel="canonical" href="{{ p.site_url }}/{{ path }}">
+<meta property="og:title" content="{% if title %}{{ title }} · {% endif %}{{ p.name }}">
+<meta property="og:description" content="{{ p.tagline }}">
+<meta property="og:type" content="website">
+<meta property="og:url" content="{{ p.site_url }}/{{ path }}">
+{% if p.photo %}<meta property="og:image" content="{{ p.site_url }}/{{ p.photo|asset }}">{% endif %}
+<link rel="icon" href="{% include "_favicon.txt" %}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Montserrat:wght@600;800{% if personal %}&family=Caveat:wght@500;700&family=Noto+Serif+Bengali:wght@400;600{% endif %}&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ base }}css/style.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"{{ p.name }}","jobTitle":"Lecturer","affiliation":"BGMEA University of Fashion & Technology","alumniOf":"Jahangirnagar University","url":"{{ p.site_url }}","sameAs":[{% for l in p.links if l.url %}"{{ l.url }}"{% if not loop.last %},{% endif %}{% endfor %}]}</script>
+</head>
+<body class="{% block bodyclass %}{% endblock %}">
+<a class="skip" href="#main">Skip to content</a>
+{% block header %}
+<header class="sheet-head">
+  {% include "_contours_band.html" %}
+  {% include "_nav.html" %}
+  <div class="wrap page-title">
+    {% block kicker %}{% endblock %}
+    <h1>{% block h1 %}{{ title }}{% endblock %}</h1>
+    {% block subtitle %}{% endblock %}
+  </div>
+</header>
+{% endblock %}
+<main id="main">
+{% block main %}{% endblock %}
+</main>
+<footer class="site-foot">
+  <div class="wrap foot-grid">
+    <div>
+      <p class="foot-name">{{ p.name }}</p>
+      <p class="foot-meta">{{ p.location }} · <span class="mono">{{ p.coordinates }}</span></p>
+      <p class="foot-meta"><a class="email-link" data-u="{{ p.email.split('@')[0] }}" data-d="{{ p.email.split('@')[1] }}" href="{{ url('contact/') }}">Email me</a></p>
+    </div>
+    <ul class="foot-links">
+      {% for l in p.links if l.url %}<li><a href="{{ l.url }}" rel="me noopener" target="_blank" aria-label="{{ l.label }}" title="{{ l.label }}">{{ icon(l.label, 20, true) }}</a></li>{% endfor %}
+    </ul>
+  </div>
+  {% if p.visitor_map_script %}
+  <div class="wrap visitors"><p class="mono small">VISITORS FROM AROUND THE WORLD</p>{{ p.visitor_map_script|safe }}</div>
+  {% endif %}
+  <div class="wrap foot-small mono">© {{ year }} {{ p.name }}</div>
+</footer>
+{% include "_note_modal.html" %}
+<script>window.NOTE_TO={{ (p.guestbook_email or p.email).split('@')|tojson }};</script>
+<script src="{{ base }}js/site.js"></script>
+</body>
+</html>

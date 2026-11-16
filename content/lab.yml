@@ -1,0 +1,15 @@
+# SIEM Lab page (Research > SIEM Lab). Edit freely; "status" shows in the coming-soon box.
+name: SIEM Lab
+full: Sustainable Innovation for Environmental Management
+pillars: [Research, Innovation, Sustainability]
+mission: Developing new ideas, methods, technologies and solutions to address environmental challenges sustainably.
+status: The detailed plan, activities and ways to get involved are coming soon.
+areas:
+  - {name: Wetland and Coastal Ecosystem Restoration, icon: wetland}
+  - {name: Climate Change Adaptation, icon: climate}
+  - {name: Nature-based Solutions, icon: leaf}
+  - {name: Community-based Natural Resource Management, icon: community}
+  - {name: Environmental Governance and Policy Innovation, icon: policy}
+  - {name: Sustainable Development Strategies, icon: growth}
+  - {name: Environmental Modelling, icon: model}
+  - {name: Data-driven Environmental Policy, icon: data}

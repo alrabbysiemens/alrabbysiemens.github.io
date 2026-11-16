@@ -1,0 +1,23 @@
+{% extends "_about.html" %}
+{% from "_skill_icons.html" import skill_icon %}
+{% block about %}
+{% set total = namespace(n=0) %}{% for g in awards %}{% set total.n = total.n + g['items']|length %}{% endfor %}
+{% for g in awards %}
+<section class="aw-group">
+  <h2 class="sub-h">{{ g.group }} <span class="muted small">· {{ g['items']|length }}</span></h2>
+  <ol class="aw-list">
+    {% for a in g['items'] %}
+    <li class="aw">
+      {% if a.logo %}<img class="xp-logo" src="{{ base }}{{ a.logo|asset }}" alt="" width="48" height="48">{% else %}{{ skill_icon(a.icon) }}{% endif %}
+      <div>
+        <h3>{{ a.title }}</h3>
+        <p class="xp-type">{{ a.by }}</p>
+        <p class="xp-dates mono">{{ a.date }}</p>
+        <p class="xp-desc">{{ a.desc }}</p>
+      </div>
+    </li>
+    {% endfor %}
+  </ol>
+</section>
+{% endfor %}
+{% endblock %}

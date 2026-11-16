@@ -1,0 +1,7 @@
+{% extends "_about.html" %}
+{% block about %}
+<p class="lead">Debating, leadership and volunteering: the work outside the classroom that shaped how I think, listen and serve.</p>
+    <ul class="news lead-list">
+      {% for l in beyond.leadership %}<li><span class="mono date">{{ l.years }}</span><div class="lead-row">{% if l.logo %}<img class="xp-logo" src="{{ base }}{{ l.logo|asset }}" alt="" loading="lazy">{% endif %}<p><b>{{ l.org }}</b><br><span class="muted">{{ l.role }}</span>{% if l.note %}<br>{{ l.note }}{% endif %}</p>{% if l.points %}<ul class="lead-pts">{% for x in l.points %}<li>{{ x }}</li>{% endfor %}</ul>{% endif %}</div></li>{% endfor %}
+    </ul>
+{% endblock %}

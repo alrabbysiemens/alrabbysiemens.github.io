@@ -1,0 +1,60 @@
+{% extends "_about.html" %}
+{% block bodyclass %}personal{% endblock %}
+{% block subtitle %}<p class="hand">the person behind the papers</p>{% endblock %}
+{% block about %}
+<div class="beyond">
+  <figure class="paper map-paper">
+    <h2 class="sub-h">Districts I've visited</h2>
+    <p class="visit-count"><b>{{ beyond.visited_list|length }}</b> <span>of 64 districts</span></p>
+    <svg class="bd-map visit-map" role="img" aria-labelledby="bmaptitle" viewBox="-10 -10 {{ bd.W + 20 }} {{ bd.H + 20 }}">
+      <title id="bmaptitle">District map of Bangladesh: {{ beyond.visited_list|length }} of 64 districts visited</title>
+      {% for d in beyond.districts %}<path class="vd{% if d.visited %} on{% endif %}{% if d.home %} home{% endif %}{% if d.current %} cur{% endif %}{% if d.ancestral %} anc{% endif %}" d="{{ d.d }}"><title>{{ d.label }}{% if d.home %} - hometown{% elif d.current %} - where I live{% elif d.ancestral %} - ancestral home{% elif d.visited %} - visited{% endif %}</title></path>{% endfor %}
+      <path class="outline" d="{{ bd.d }}"/>
+      {% include "_rivers.html" %}
+      {% for d in beyond.districts if d.home or d.current or d.ancestral %}<text class="vd-label" x="{{ d.cx }}" y="{{ d.cy + 4 }}" text-anchor="middle">{{ d.label }}</text>{% endfor %}
+    </svg>
+    <figcaption class="legend">
+      <span><i class="dot" style="background:var(--rust)"></i>Hometown</span>
+      <span><i class="dot" style="background:#7B3F8F"></i>Where I live</span>
+      <span><i class="dot" style="background:#C9A227"></i>Ancestral home</span>
+      <span><i class="dot" style="background:#6FA597"></i>Visited</span>
+      <span><i class="dot" style="background:#D9E7E2;border:1px solid var(--frame)"></i>Not yet</span>
+      <span><i class="dot" style="background:#1F5FB0;border-radius:2px;height:4px"></i>Main rivers</span>
+      <span><i class="dot" style="background:#7FC4E6;border-radius:2px;height:3px"></i>Other rivers</span>
+    </figcaption>
+    <ul class="tags visit-tags">{% for n in beyond.visited_list %}<li>{{ n }}</li>{% endfor %}</ul>
+  </figure>
+  <div class="beyond-side">
+    <h2 class="sub-h">Hobbies</h2>
+    {% from "_hobby_icons.html" import hobby_icon %}
+    <div class="hobbies">{% for h in beyond.hobbies or [] %}<div class="hobby">{{ hobby_icon(h.icon) }}<div><b>{{ h.name }}</b><span>{{ h.note }}</span></div></div>{% endfor %}</div>
+
+
+    {% if beyond.trips %}
+    <h2 class="sub-h">Trip notes</h2>
+    <ul class="news">{% for t in beyond.trips %}<li><span class="mono date">{{ t.date|month }}</span><p><b>{{ t.place }}</b> - {{ t.note }}</p></li>{% endfor %}</ul>
+    {% endif %}
+  </div>
+</div>
+{% if beyond.affiliations %}
+<section class="affil">
+  <h2 class="sub-h">Places that left a sticker on me</h2>
+  <p class="affil-sub hand">every place I studied, worked, trained, debated or got cheered on - hover (or tap) a sticker</p>
+  <div class="laptop">
+    <div class="lid">
+      {% set rots = [-14,9,-6,12,-10,5,-16,8,-4,14,-8,11,-12,6,-5,15,-9,10,-13,4,-7,13,-11,7] %}
+      {% set shapes = ['','sq','','wide','','sq','peel',''] %}
+      {% set ns = namespace(i=0) %}
+      {% for g in beyond.affiliations %}{% for a in g["items"] %}
+      <button type="button" class="stk {{ shapes[ns.i % 8] }}" style="--r:{{ rots[ns.i % 24] }}deg;--d:{{ ns.i * 70 }}ms;--b:{{ 3 + (ns.i % 5) * 0.6 }}s">
+        <img src="{{ base }}{{ a.logo|asset }}" alt="{{ a.name }}" loading="lazy">
+        <span class="stk-tip"><b>{{ a.name }}</b>{% if a.note %}<i>{{ a.note }}</i>{% endif %}<small>{{ g.group }}</small></span>
+      </button>{% set ns.i = ns.i + 1 %}
+      {% endfor %}{% endfor %}
+      <span class="lid-apple" aria-hidden="true"></span>
+    </div>
+    <div class="laptop-base"></div>
+  </div>
+</section>
+{% endif %}
+{% endblock %}

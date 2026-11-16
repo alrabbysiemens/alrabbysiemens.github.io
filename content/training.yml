@@ -1,0 +1,63 @@
+- title: 'Next-GEN GIS Bootcamp: GeoAI, Remote Sensing, Machine Learning & Explainable AI'
+  provider: ResGeo Lab
+  logo: img/logos/resgeo.png
+  mode: Online
+  date: May 2026 – Present
+  focus: GeoAI
+  learnings:
+  - Applied GeoAI, remote sensing and machine learning for geospatial analysis.
+  - Used explainable AI (XAI) methods to interpret machine-learning outputs for environmental applications.
+- title: Training on Financial Management for Sub-project Team
+  provider: HEAT, University Grants Commission
+  logo: img/logos/heat.png
+  mode: In person
+  date: Apr 2026
+  focus: Finance
+  learnings:
+  - Learned project budgeting and financial reporting.
+  - Understood HEAT-UGC financial compliance and fund management.
+- title: Data Science and Machine Learning with Python & R
+  provider: Data Solution 360
+  logo: img/logos/datasolution360.png
+  mode: Online
+  date: Jan – Jul 2025
+  focus: Machine learning
+  learnings:
+  - Built supervised and unsupervised machine-learning models using Python and R.
+  - Performed EDA, feature engineering, model evaluation and predictive analytics.
+- title: Prompt Engineering Mastery
+  provider: Udemy
+  logo: img/logos/udemy.png
+  mode: Online
+  date: Feb 2025
+  focus: AI prompting
+  learnings:
+  - Developed effective prompting strategies for generative AI applications.
+  - Applied prompt engineering to research, teaching and workflow automation.
+- title: Introduction to Python Programming
+  provider: Bohubrihi, Shikho Technologies Bangladesh Ltd.
+  logo: img/logos/bohubrihi.png
+  mode: Online
+  date: Nov 2024 – Feb 2025
+  focus: Python
+  learnings:
+  - Learned Python fundamentals, data structures, functions and file handling.
+  - Wrote scripts to automate data cleaning and analysis tasks.
+- title: 'Research Course: Basic to Advance (SPSS, Zotero, Mendeley, KoBoToolbox)'
+  provider: Research Help Bangladesh
+  logo: img/logos/rhb.png
+  mode: Hybrid
+  date: Dec 2022 – Feb 2023
+  focus: Research tools
+  learnings:
+  - Acquired practical skills in SPSS, Zotero, Mendeley and KoBoToolbox.
+  - Strengthened research design, data analysis and academic writing.
+- title: Mapping and Spatial Analysis with ArcGIS
+  provider: Bohubrihi, Shikho Technologies Bangladesh Ltd.
+  logo: img/logos/bohubrihi.png
+  mode: Online
+  date: Jul – Aug 2022
+  focus: GIS
+  learnings:
+  - Conducted spatial analysis, geoprocessing and thematic mapping in ArcGIS.
+  - Managed vector, raster and geodatabase workflows.

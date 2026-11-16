@@ -1,0 +1,17 @@
+<div class="note-modal" id="note-modal" hidden role="dialog" aria-modal="true" aria-labelledby="note-title">
+  <div class="note-back" data-close></div>
+  <form class="note-card" id="note-form" novalidate>
+    <button type="button" class="note-x" data-close aria-label="Close">×</button>
+    <p class="mono small note-kick">BEFORE YOU GO <span class="note-date"></span></p>
+    <h2 id="note-title">Leave a note on my board?</h2>
+    <p class="note-sub">A few words, a hello, a thought on something you read. I read every note, and the ones I approve get pinned on the <a href="{{ url('media/your-presence/') }}">Your Presence</a> board.</p>
+    <label>Message<textarea name="message" rows="4" maxlength="300" required placeholder="e.g. Loved your piece on the Teesta. Hope to see more on Bangladesh's rivers!"></textarea><small class="note-count mono">0 / 300</small></label>
+    <div class="note-row">
+      <label>Name<input name="name" maxlength="60" required placeholder="e.g. Siemens"></label>
+      <label>Location<input name="location" maxlength="60" placeholder="e.g. Dhaka, Bangladesh"></label>
+    </div>
+    <input type="text" name="_honey" class="note-hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+    <div class="note-actions"><button type="button" class="note-later" data-close>Maybe later</button><button type="submit" class="btn">Pin my note</button></div>
+    <p class="note-status" role="status"></p>
+  </form>
+</div>

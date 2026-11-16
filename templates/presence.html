@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block kicker %}<p class="crumb mono">MEDIA / YOUR PRESENCE</p>{% endblock %}
+{% block subtitle %}<p class="hand">notes left by people who passed by</p>{% endblock %}
+{% block main %}
+<div class="wrap">
+  <div class="presence-top">
+    <p>Visited this site? Leave a line, it gets pinned here once I read it.</p>
+    <button type="button" class="btn note-open">✍ Leave a note</button>
+  </div>
+  <div class="board">
+    {% if notes %}
+    {% set colors = ['yellow','mint','sky','pink','peach'] %}
+    {% for n in notes %}
+    <figure class="sticky c-{{ n.color or colors[loop.index0 % 5] }} t{{ loop.index % 5 }}">
+      <blockquote>{{ n.message }}</blockquote>
+      <figcaption><b>- {{ n.name }}{% if n.date|year %}, {{ n.date|year }}{% endif %}</b>{% if n.location %}<span>{{ n.location }}</span>{% endif %}</figcaption>
+    </figure>
+    {% endfor %}
+    {% else %}
+    <div class="sticky c-yellow t1 sticky-empty"><blockquote>The board is waiting for its first note. Will it be yours?</blockquote><figcaption><b>- Siemens, 2026</b><span>Dhaka, Bangladesh</span></figcaption></div>
+    {% endif %}
+  </div>
+</div>
+{% endblock %}

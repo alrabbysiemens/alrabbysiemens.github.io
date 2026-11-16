@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block kicker %}<p class="crumb mono">RESEARCH / PUBLICATIONS</p>{% endblock %}
+{% from "_sec_icons.html" import sec_icon %}
+{% block main %}
+<div class="wrap">
+  <nav class="pub-tabs" aria-label="Publication types">
+    {% for g in groups %}<a class="pill" href="#{{ g.key }}">{{ g.label }}{% if g.pubs %} · {{ g.pubs|length }}{% endif %}</a>{% endfor %}
+  </nav>
+  {% for g in groups %}
+  <section class="pub-group" id="{{ g.key }}">
+    <h2 class="sec-h">{{ sec_icon(g.key) }}<span>{{ g.label }}</span></h2>
+    {% if g.pubs %}
+    <ol class="pubs">
+      {% for pb in g.pubs %}
+      <li>
+        <p class="year">{{ pb.year or '-' }}</p>
+        <div>
+          <h3>{% if pb.doi_url %}<a href="{{ pb.doi_url }}" target="_blank" rel="noopener">{{ pb.title }}</a>{% elif pb.url %}<a href="{{ pb.url }}" target="_blank" rel="noopener">{{ pb.title }}</a>{% else %}{{ pb.title }}{% endif %}</h3>
+          <p class="authors">{{ pb.authors_html }}{% if pb.venue %} · <em>{{ pb.venue }}</em>{% endif %}</p>
+          <p class="badges">
+            {% if pb.doi_url %}<a class="badge b-doi" href="{{ pb.doi_url }}" target="_blank" rel="noopener">DOI {{ pb.doi }}</a>{% endif %}
+            {% if pb.url and not pb.doi_url %}<a class="badge b-doi" href="{{ pb.url }}" target="_blank" rel="noopener">{{ 'ResearchGate' if 'researchgate' in pb.url else ('Read on ' ~ (pb.venue.split(',')[0] if pb.category == 'oped' else 'publisher')) }} ↗</a>{% endif %}
+            {% if pb.pdf %}<a class="badge b-pdf" href="{{ base }}{{ pb.pdf|asset }}">PDF</a>{% endif %}
+            <span class="badge b-{{ pb.status }}">{{ pb.status_label }}</span>
+          </p>
+        </div>
+      </li>
+      {% endfor %}
+    </ol>
+    {% else %}
+    <p class="muted empty">Nothing here yet.</p>
+    {% endif %}
+  </section>
+  {% endfor %}
+</div>
+{% endblock %}

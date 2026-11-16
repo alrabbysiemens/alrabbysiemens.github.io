@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block kicker %}<p class="crumb mono">MEDIA / IN THE NEWS</p>{% endblock %}
+{% block subtitle %}<p class="subtitle">Newspaper features about my work and debating.</p>{% endblock %}
+{% block main %}
+<div class="wrap press">
+  {% for n in press %}
+  <article class="press-item{% if n.image %} has-img{% endif %}">
+    {% if n.image %}<a class="press-clip" href="{{ base }}{{ n.image|asset }}" target="_blank" rel="noopener"><img src="{{ base }}{{ n.image|asset }}" alt="Newspaper clipping: {{ n.title }}" loading="lazy"><span class="mono small">{{ n.image_label or "View full clipping" }} ↗</span></a>{% endif %}
+    <div class="press-body">
+      <p class="press-outlet"><b>{{ n.outlet }}</b>{% if n.outlet_bn %} <span class="bn">· {{ n.outlet_bn }}</span>{% endif %}{% if n.date %}<span class="mono small"> · {{ n.date }}</span>{% endif %}</p>
+      <h2 class="{{ 'bn' if n.lang == 'bn' }}">{{ n.title }}</h2>
+      {% if n.byline %}<p class="press-by {{ 'bn' if n.lang == 'bn' }}">{{ n.byline }}</p>{% endif %}
+      {% if n.note %}<p class="press-note">{{ n.note }}</p>{% endif %}
+      {% if n.url %}<a class="btn press-btn" href="{{ n.url }}" target="_blank" rel="noopener">Read on {{ n.outlet }} ↗</a>{% endif %}
+    </div>
+  </article>
+  {% endfor %}
+</div>
+{% endblock %}

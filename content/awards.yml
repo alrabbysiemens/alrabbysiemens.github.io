@@ -1,0 +1,98 @@
+# Awards & achievements, grouped. Within each group they show newest first.
+# logo: an image in static/img/logos/  ·  icon: used when there is no logo (scholarship, science, leaf, idea, debate)
+- group: Fellowships & scholarships
+  items:
+    - title: National Science & Technology (NST) Fellowship
+      by: Ministry of Science and Technology, Bangladesh
+      date: Feb 2025
+      logo: img/logos/most.png
+      desc: Awarded for academic achievement and research in science and technology, supporting my M.Sc. thesis.
+    - title: Bangladesh Government Talentpool Scholarship (Honours)
+      by: Directorate of Secondary & Higher Education
+      date: "2022"
+      logo: img/logos/most-emblem.png
+      desc: Recognised outstanding undergraduate academic performance.
+    - title: University Supplementary Scholarship
+      by: Jahangirnagar University
+      date: 2018 – 2024
+      logo: img/logos/ju.png
+      desc: Awarded for academic excellence throughout my B.Sc. and M.Sc.
+
+- group: Academic & knowledge competitions
+  items:
+    - title: 2nd Position, Essay Writing Competition 2023
+      by: Embassy of Nepal, Dhaka & Nepal–Bangladesh Friendship Society
+      date: Jan 2024
+      logo: img/logos/nepal-embassy.png
+      desc: Essay on "Ways to Enhance Economic Cooperation Between Nepal and Bangladesh", drawing on Rostow's theory of economic growth.
+    - title: Champion, National GK Olympiad 2023
+      by: Uttara Academy Science Club (UASC)
+      date: Sep 2023
+      logo: img/logos/uasc.png
+      desc: First place in a national general-knowledge contest testing breadth and quick analytical thinking.
+    - title: 1st Runner-up, Green Innovation Extravaganza (National Knowledge Summit 1.0)
+      by: Artsci Association
+      date: Jun 2023
+      logo: img/logos/artsci.png
+      desc: Recognised for an innovative, sustainable solution in a national green-innovation contest.
+    - title: Champion, Crossword Puzzle Solving Competition
+      by: 1st National Environmental Carnival (TEL Plastics, Youthpreneur Network, Environment Watch BUET)
+      date: Nov 2022
+      logo: img/logos/tel-carnival.png
+      desc: Won through problem-solving and critical thinking under time pressure.
+
+- group: Debate
+  items:
+    - title: Champion, 15th Inter Hall Debate Competition
+      by: Jahangirnagar University Debate Organization (JUDO)
+      date: Dec 2022
+      logo: img/logos/judo.png
+      desc: Led my hall team to the title in JU's inter-hall debate championship.
+    - title: 2nd Position, Turn the Coat Debate
+      by: 1st National Environmental Carnival
+      date: Nov 2022
+      logo: img/logos/tel-carnival.png
+      desc: Argued both sides of environmental issues in a fast-paced "switch-sides" format.
+    - title: Champion, 14th Inter Hall Debate Competition
+      by: Jahangirnagar University Debate Organization (JUDO)
+      date: Dec 2021
+      logo: img/logos/judo.png
+      desc: Won JU's inter-hall championship through strong argumentation and strategy.
+    - title: Champion, JUDO National Debate Festival 2021 (University Segment)
+      by: Jahangirnagar University Debate Organization (JUDO)
+      date: Dec 2021
+      logo: img/logos/judo.png
+      desc: Won the inter-university segment of a national-level debate festival.
+    - title: Debater of the Year
+      by: Jahangirnagar University Debate Organization (JUDO)
+      date: Dec 2021
+      logo: img/logos/judo.png
+      desc: Named the organisation's top debater for the year.
+    - title: Champion, ActionAid–Prothom Alo Bandhushava National Debate Fest
+      by: ActionAid Bangladesh & Prothom Alo Bandhushava
+      date: Jan 2020
+      logo: img/logos/actionaid-prothomalo.png
+      desc: Won a nationwide inter-university debate competition.
+    - title: Champion, Rotaract Debate Competition 2019
+      by: Rotaract (Rotary Club partner)
+      date: Jan 2019
+      logo: img/logos/rotaract.svg
+      desc: Won an inter-university debate through clear communication and reasoning.
+
+- group: Professional recognition
+  items:
+    - title: Speed Master, K-12 Project
+      by: 10 Minute School
+      date: Feb 2022
+      logo: img/logos/10-minute-school.png
+      desc: Recognised for fast, high-quality content delivery under tight deadlines.
+    - title: Best Performer, Quality Assurance & Control
+      by: 10 Minute School
+      date: Nov 2021
+      logo: img/logos/10-minute-school.png
+      desc: Recognised for consistently excellent results in maintaining content quality.
+    - title: Best Instructor, Content (Academics)
+      by: 10 Minute School
+      date: Oct 2021
+      logo: img/logos/10-minute-school.png
+      desc: Awarded for engaging, high-quality Geography teaching content.

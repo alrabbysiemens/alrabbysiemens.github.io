@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block kicker %}<p class="crumb mono">ABOUT / {{ title|upper }}</p>{% endblock %}
+{% block main %}
+<div class="wrap about-layout">
+  <nav class="side-tabs" aria-label="About sections">
+    {% for t in about_tabs %}<a href="{{ url(t.href) }}"{% if t.href == tab %} aria-current="page"{% endif %}>{{ t.label }}</a>{% endfor %}
+    {% if p.cv_pdf %}<a href="{{ base }}{{ p.cv_pdf|asset }}" download>CV (PDF) ↓</a>{% endif %}
+  </nav>
+  <div class="about-body">
+    {% block about %}{% endblock %}
+  </div>
+</div>
+{% endblock %}

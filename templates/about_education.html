@@ -1,0 +1,31 @@
+{% extends "_about.html" %}
+{% block about %}
+<ol class="xp edu">
+  {% set ns = namespace(seen=[]) %}
+  {% for e in education if e.institution not in ns.seen %}
+  {% set ns.seen = ns.seen + [e.institution] %}
+  {% set group = education|selectattr('institution', 'equalto', e.institution)|list %}
+  <li class="xp-org">
+    <div class="xp-head">
+      {% if e.logo %}<img class="xp-logo" src="{{ base }}{{ e.logo|asset }}" alt="" width="48" height="48">{% endif %}
+      <div><h3>{{ e.institution }}</h3>{% if e.sub %}<p class="xp-meta">{{ e.sub }}</p>{% endif %}</div>
+    </div>
+    <ol class="xp-roles{% if group|length > 1 %} multi{% endif %}">
+      {% for g in group %}
+      <li>
+        <div class="edu-row">
+          <div class="xp-role-top"><h4>{{ g.degree }}</h4><span class="xp-now">{{ g.result }}</span></div>
+          <p class="edu-when mono">{{ g.session }}</p>
+        </div>
+        {% if g.note %}<div class="xp-project edu-note edu-{{ (g.note_label or 'Thesis')|lower }}"><span>{{ g.note_label or 'Thesis' }}</span> <b class="edu-title">{{ g.note }}</b>
+          {% if g.supervisor %}<p class="edu-sup">Supervisor: {{ g.supervisor }}</p>{% endif %}
+          {% if g.glimpse %}<ul class="edu-glimpse">{% for x in g.glimpse %}<li>{{ x }}</li>{% endfor %}</ul>{% endif %}
+        </div>{% endif %}
+      </li>
+      {% endfor %}
+    </ol>
+    {% if e.highlights %}<div class="edu-hl"><p class="mono small">BEYOND THE CLASSROOM</p><ul>{% for h in e.highlights %}<li>{{ h }}</li>{% endfor %}</ul></div>{% endif %}
+  </li>
+  {% endfor %}
+</ol>
+{% endblock %}

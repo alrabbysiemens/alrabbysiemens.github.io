@@ -1,0 +1,155 @@
+# Experience, LinkedIn style: one entry per organisation, with every role there listed under it.
+# Dates: "Mon YYYY" (e.g. "Sep 2026"); use "Present" for current roles. Durations are calculated automatically.
+# logo: an image in static/img/logos/ (leave empty to show the organisation's initials instead).
+# Order on the site is automatic: organisations where you still work come first, then the rest by end date.
+
+- org: BGMEA University of Fashion & Technology (BUFT)
+  short: BUFT
+  logo: img/logos/buft.png
+  location: Dhaka, Bangladesh · On-site
+  roles:
+    - title: Lecturer
+      type: Full-time
+      unit: Department of Social Science
+      start: Sep 2026
+      end: Present
+      description: >-
+        I teach undergraduate courses and contribute to curriculum development and academic quality.
+        I integrate Bloom's Taxonomy and Outcome-Based Education (OBE) into course design, learning activities
+        and assessment to build measurable learning outcomes, critical thinking and analytical skills, and
+        contribute to interdisciplinary teaching, academic planning and students' professional development.
+    - title: Adjunct Faculty
+      type: Contract
+      start: Oct 2025
+      end: Aug 2026
+      description: >-
+        As an Adjunct Faculty member at BGMEA University of Fashion & Technology (BUFT), I delivered undergraduate
+        theoretical and practical instruction in Environmental Science. My responsibilities included preparing lectures,
+        designing laboratory activities, assessing student performance and providing academic guidance to strengthen
+        students' understanding of ecological systems and practical environmental applications.
+
+- org: Convention on Wetlands (Ramsar)
+  short: RAMSAR
+  logo: img/logos/ramsar.png
+  location: Tanguar Haor, Sunamganj · On-site
+  roles:
+    - title: Research Associate
+      type: Contract
+      unit: Nagao Wetland Fund
+      project: "Modeling Community-led Conservation Strategy Integrating Science-Policy Nexus for Reducing the Degradation of Tanguar Haor (Ramsar Site No. 1031)"
+      start: Dec 2025
+      end: Present
+      description: >-
+        I support community-led wetland conservation and
+        restoration planning through GIS-based spatial analysis, field and household surveys, FGDs, KIIs and
+        stakeholder consultations, integrating scientific evidence, local knowledge and policy perspectives.
+
+- org: Jahangirnagar University
+  short: JU
+  logo: img/logos/ju.png
+  location: Savar, Dhaka
+  roles:
+    - title: Research Assistant
+      type: ""
+      unit: "Department of Geography & Environment · Supervisor: Prof. Dr. Md. Nazrul Islam"
+      start: Sep 2021
+      end: Present
+      description: >-
+        Assist in interdisciplinary environmental and geospatial research projects, and contribute to research
+        proposals, technical reports and peer-reviewed publications.
+    - title: Enumerator
+      type: Contract
+      unit: University Grants Commission (UGC) funded
+      project: "Modeling on E-Learning Pragmatism to Mitigation Strategies of COVID-19 Impact on Public and Private University Education in Bangladesh"
+      start: Jun 2024
+      end: Sep 2024
+      description: >-
+        Surveyed students and educators for a project on how e-learning helped public and private universities
+        in Bangladesh cope with COVID-19 disruption; the data informed mitigation strategies for future disruptions.
+
+- org: System Innovation FabLab – JU
+  short: FabLab
+  logo: img/logos/heat.png
+  location: HEAT Project (UGC & World Bank) · Dhaka · On-site
+  roles:
+    - title: Data Analyst and Consultant
+      type: Contract
+      start: Apr 2026
+      end: Jul 2026
+      description: >-
+        Supported project development, data management and analysis for research and innovation activities.
+        Processed and visualised geospatial, environmental and field data, turning complex datasets into
+        practical insights for decision-making and applied research.
+
+- org: 10 Minute School
+  short: 10MS
+  logo: img/logos/10-minute-school.png
+  location: Dhaka, Bangladesh
+  roles:
+    - title: Senior Executive, Quality Assurance & Control
+      type: Full-time
+      start: Feb 2025
+      end: Mar 2026
+      mode: On-site
+      description: >-
+        Led the development and continuous improvement of academic and upskilling content. Managed KPIs,
+        coordinated with Content Managers and guided a virtual team; ran quality audits, surveys and performance
+        reviews; and provided oversight on project forecasting, capacity management and risk analysis.
+    - title: Instructor (Geography)
+      type: Content Academics
+      start: Dec 2019
+      end: Mar 2026
+      mode: Hybrid
+      description: >-
+        Taught Geography to 100,000+ students. Created 500+ YouTube tutorials and 5,000+ quizzes, supporting
+        online education especially during the COVID-19 pandemic, and helped students with their academic challenges.
+    - title: Content Reviewer
+      type: Quality Assurance & Control
+      start: Aug 2020
+      end: Feb 2022
+      mode: Hybrid
+      description: >-
+        Evaluated lessons, quizzes and tutorials, and developed standardised content to keep online learning
+        consistent, accessible and engaging.
+
+- org: Bangladesh Forest Department
+  short: BFD
+  logo: img/logos/forest-department.png
+  location: Dhaka, Bangladesh
+  roles:
+    - title: Research Associate (SUFAL Innovation Grant)
+      type: Contract
+      project: "Modeling Forest Health and Associated Topographic, Vegetation and Microclimatic Factors to Improve Forest Restoration Practices"
+      start: Oct 2023
+      end: Dec 2025
+      description: >-
+        Led field data collection and the research team in a study of forest health and its topographic,
+        vegetation and microclimatic drivers. Analysed data, co-designed methods and wrote the project report
+        to improve forest restoration practice.
+
+- org: BAF Shaheen English Medium College (SEMC)
+  short: SEMC
+  logo: img/logos/semc.png
+  location: Dhaka, Bangladesh
+  roles:
+    - title: Junior Teacher (Geography)
+      type: ""
+      start: Aug 2025
+      end: Oct 2025
+      description: >-
+        Taught Geography in an English-medium curriculum, planning lessons, running classroom activities and
+        assessing students' progress to build their understanding of physical and human geography.
+
+- org: Ministry of Science and Technology (MoST), Bangladesh
+  short: MoST
+  logo: img/logos/most.png
+  location: Bangladesh · Hybrid
+  roles:
+    - title: Research Fellow (NST Fellowship)
+      type: Contract
+      project: "M.Sc. thesis: Modeling for the Impact Assessment of Shrimp Farming Practices on the Ecosystem of Northern Bay of Bengal in Bangladesh"
+      start: Dec 2024
+      end: Feb 2025
+      description: >-
+        National Science and Technology (NST) Fellowship supporting my M.Sc. thesis research, which modelled the
+        ecosystem impact of shrimp farming and management strategies for the northern Bay of Bengal coast.

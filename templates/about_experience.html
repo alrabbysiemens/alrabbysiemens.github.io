@@ -1,0 +1,32 @@
+{% extends "_about.html" %}
+{% block about %}
+<ol class="xp">
+  {% for o in experience %}
+  <li class="xp-org">
+    <div class="xp-head">
+      {% if o.logo %}<img class="xp-logo" src="{{ base }}{{ o.logo|asset }}" alt="" width="48" height="48">
+      {% else %}<span class="xp-logo xp-mono" aria-hidden="true">{{ o.initials }}</span>{% endif %}
+      <div>
+        <h3>{{ o.org }}</h3>
+        {% if o.roles|length > 1 %}<p class="xp-meta">{{ o.duration }}</p>{% endif %}
+        {% if o.location %}<p class="xp-meta">{{ o.location }}</p>{% endif %}
+      </div>
+    </div>
+    <ol class="xp-roles{% if o.roles|length > 1 %} multi{% endif %}">
+      {% for r in o.roles %}
+      <li>
+        <div class="xp-role-top">
+          <h4>{{ r.title }}</h4>
+          {% if r.current %}<span class="xp-now">Present</span>{% endif %}
+        </div>
+        {% if r.type or r.unit %}<p class="xp-type">{{ r.type }}{% if r.type and r.unit %} · {% endif %}{{ r.unit or '' }}</p>{% endif %}
+        {% if r.project %}<p class="xp-project"><span>Project</span> {{ r.project }}</p>{% endif %}
+        <p class="xp-dates mono">{{ r.start }} – {{ r.end or r.start }} · {{ r.duration }}{% if r.mode %} · {{ r.mode }}{% endif %}</p>
+        {% if r.description %}<p class="xp-desc">{{ r.description }}</p>{% endif %}
+      </li>
+      {% endfor %}
+    </ol>
+  </li>
+  {% endfor %}
+</ol>
+{% endblock %}

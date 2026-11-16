@@ -1,0 +1,2 @@
+<g class="rivers" aria-hidden="true"><path class="r-other-l" d="{{ rivers.other_line }}"/><path class="r-main-l" d="{{ rivers.main_line }}"/></g>
+<g class="river-labels" aria-hidden="true">{% for r in river_labels %}<text x="{{ r.x }}" y="{{ r.y }}"{% if r.rot %} transform="rotate({{ r.rot }} {{ r.x }} {{ r.y }})"{% endif %}>{{ r.name }}</text>{% endfor %}</g>

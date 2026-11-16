@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block bodyclass %}personal{% endblock %}
+{% block kicker %}<p class="crumb mono">WRITING · <span class="bn">লেখা</span></p>{% endblock %}
+{% block subtitle %}<p class="hand">notes from my desk, in English and Bangla</p>{% endblock %}
+{% block main %}
+<div class="wrap narrow">
+  <div class="filter" role="group" aria-label="Filter by language">
+    <button type="button" class="pill" aria-pressed="true" data-filter="all">All</button>
+    <button type="button" class="pill pill-en" aria-pressed="false" data-filter="en">English</button>
+    <button type="button" class="pill pill-bn bn" aria-pressed="false" data-filter="bn">বাংলা</button>
+  </div>
+  <div class="paper ruled">
+    {% if writeups %}
+    <ol class="posts" data-filterable>
+      {% for w in writeups %}
+      <li data-kind="{{ w.lang }}">
+        <p class="hand date">{{ w.date_str }}</p>
+        <div>
+          {% if w.image %}<a href="{{ url('writing/' ~ w.slug ~ '/') }}"><img class="wu-thumb" src="{{ base }}{{ w.image|asset }}" alt="" loading="lazy"></a>{% endif %}
+          <span class="lang lang-{{ w.lang }}">{{ 'বাংলা' if w.lang == 'bn' else 'EN' }}</span>
+          <h2 class="{{ 'bn' if w.lang == 'bn' }}"><a href="{{ url('writing/' ~ w.slug ~ '/') }}">{{ w.title }}</a></h2>
+          {% if w.summary %}<p class="{{ 'bn' if w.lang == 'bn' }}">{{ w.summary }}</p>{% endif %}
+          <p class="mono small muted">{{ w.minutes }} min read<span class="reads" data-key="{{ w.slug }}" data-base="{{ w.reads }}">{% if w.reads_str %} · {{ w.reads_str }} reads{% endif %}</span></p>
+        </div>
+      </li>
+      {% endfor %}
+    </ol>
+    {% else %}
+    <p class="hand empty-hand">The first write-ups are on their way…</p>
+    {% endif %}
+  </div>
+</div>
+{% endblock %}

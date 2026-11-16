@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block bodyclass %}personal{% endblock %}
+{% block kicker %}<p class="crumb mono">MEDIA / GALLERY</p>{% endblock %}
+{% block subtitle %}<p class="hand">moments worth keeping</p>{% endblock %}
+{% block main %}
+<div class="wrap">
+  {% if gallery %}
+  <nav class="g-index">{% for g in gallery %}<a href="#g{{ loop.index }}">{{ g.title }}</a>{% endfor %}</nav>
+  <div class="g-stories">
+    {% for g in gallery %}
+    <article class="g-story{% if loop.index is even %} flip{% endif %}" id="g{{ loop.index }}">
+      <div class="g-photos n{{ g.images|length if g.images|length < 3 else 3 }}">
+        {% for im in g.images %}
+        <button type="button" class="polaroid g-ph r{{ (loop.index + loop.length) % 4 }}{% if loop.first %} main{% endif %}" data-lb="{{ base }}{{ im|asset }}" data-cap="{{ g.title }}">
+          <img src="{{ base }}{{ im|asset }}" alt="{{ g.title }} - photo {{ loop.index }}" loading="lazy">
+        </button>
+        {% endfor %}
+      </div>
+      <div class="g-text">
+        <p class="mono small g-meta">{% if g.when %}{{ g.when }}{% endif %}{% if g.when and g.place %} · {% endif %}{{ g.place|upper if g.place }}</p>
+        <h2>{{ g.title }}</h2>
+        <div class="g-body">{{ g.text|md }}</div>
+        {% if g.images|length > 1 %}<p class="mono small g-count">📷 {{ g.images|length }} photos · tap to enlarge</p>{% endif %}
+      </div>
+    </article>
+    {% endfor %}
+  </div>
+  <div class="g-lb" hidden><button type="button" class="g-lb-x" aria-label="Close">×</button><button type="button" class="g-lb-p" aria-label="Previous">‹</button><figure><img alt=""><figcaption class="hand"></figcaption></figure><button type="button" class="g-lb-n" aria-label="Next">›</button></div>
+  {% else %}
+  <div class="paper empty-paper"><p class="hand empty-hand">Photos coming soon.</p></div>
+  {% endif %}
+</div>
+{% endblock %}

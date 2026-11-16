@@ -1,0 +1,160 @@
+# Editing panel configuration for Pages CMS (https://pagescms.org)
+media:
+  input: static/img
+  output: img
+
+content:
+  - name: writeups
+    label: Write-ups
+    type: collection
+    path: content/writeups
+    filename: "{year}-{month}-{day}-{primary}.md"
+    view:
+      fields: [title, lang, date]
+    fields:
+      - { name: title, label: Title, type: string, required: true }
+      - { name: date, label: Date, type: date, required: true }
+      - name: lang
+        label: Language
+        type: select
+        options: { values: [ { value: en, label: English }, { value: bn, label: বাংলা } ] }
+      - { name: summary, label: Short summary (1–2 lines), type: text }
+      - { name: body, label: Write-up, type: rich-text }
+
+  - name: news
+    label: Latest updates
+    type: file
+    path: content/news.yml
+    list: true
+    fields:
+      - { name: date, label: "Date (YYYY-MM)", type: string }
+      - { name: text, label: Update, type: text }
+
+  - name: publications
+    label: Publications
+    type: file
+    path: content/publications.yml
+    list: true
+    fields:
+      - name: category
+        label: Type
+        type: select
+        options: { values: [ { value: book, label: Book }, { value: chapter, label: Book chapter }, { value: journal, label: Journal article }, { value: proceeding, label: Conference proceeding }, { value: oped, label: Op-ed } ] }
+      - { name: title, label: Title, type: string }
+      - { name: authors, label: Authors, type: string }
+      - { name: venue, label: "Journal / book / newspaper", type: string }
+      - { name: year, label: Year, type: string }
+      - name: status
+        label: Status
+        type: select
+        options: { values: [ published, accepted, under-review, in-progress ] }
+      - { name: doi, label: "DOI (e.g. 10.1016/j.rsma.2025.104496)", type: string }
+      - { name: url, label: "Link (if no DOI)", type: string }
+
+  - name: gallery
+    label: Gallery & videos
+    type: file
+    path: content/media.yml
+    fields:
+      - name: gallery
+        label: Gallery photos
+        type: object
+        list: true
+        fields:
+          - { name: image, label: Photo, type: image }
+          - { name: caption, label: Caption, type: string }
+          - { name: place, label: Place, type: string }
+      - name: videos
+        label: Videos
+        type: object
+        list: true
+        fields:
+          - { name: title, label: Title, type: string }
+          - { name: url, label: Link, type: string }
+          - { name: platform, label: "Platform (YouTube / 10 Minute School)", type: string }
+          - { name: thumbnail, label: "Thumbnail (non-YouTube only)", type: image }
+
+  - name: projects
+    label: Projects
+    type: file
+    path: content/projects.yml
+    list: true
+    fields:
+      - { name: title, label: Title, type: string }
+      - { name: place, label: Place, type: string }
+      - { name: lat, label: Latitude (e.g. 25.13), type: string }
+      - { name: lon, label: Longitude (e.g. 91.07), type: string }
+      - name: theme
+        label: Map colour
+        type: select
+        options: { values: [ { value: water, label: "Blue - wetlands, rivers, coasts" }, { value: land, label: "Green - forests, land, cities" } ] }
+      - { name: role, label: Role, type: string }
+      - { name: funder, label: Funder, type: string }
+      - { name: summary, label: Summary, type: text }
+
+  - name: awards
+    label: Awards
+    type: file
+    path: content/awards.yml
+    list: true
+    fields:
+      - { name: title, label: Award, type: string }
+      - { name: by, label: Given by, type: string }
+      - { name: year, label: Year, type: string }
+      - { name: note, label: Note, type: text }
+
+  - name: training
+    label: Training
+    type: file
+    path: content/training.yml
+    list: true
+    fields:
+      - { name: title, label: Course, type: string }
+      - { name: provider, label: Provider, type: string }
+      - { name: mode, label: Mode, type: string }
+      - { name: date, label: Dates, type: string }
+      - { name: focus, label: Focus, type: string }
+
+  - name: profile
+    label: Profile & links
+    type: file
+    path: content/profile.yml
+    fields:
+      - { name: name, label: Name, type: string }
+      - { name: tagline, label: Tagline, type: text }
+      - { name: kicker, label: Small line above name, type: string }
+      - { name: roles, label: Roles, type: string, list: true }
+      - { name: bio, label: Short bio, type: text }
+      - { name: research_interests, label: Research interests, type: string, list: true }
+      - name: links
+        label: Profile links
+        type: object
+        list: true
+        fields:
+          - { name: label, label: Name, type: string }
+          - { name: url, label: Link, type: string }
+      - { name: photo, label: Profile photo (3:4 portrait), type: image }
+      - { name: photo_caption, label: Photo caption, type: string }
+      - { name: cv_pdf, label: "Public CV PDF path (e.g. cv/Al_Rabby_Siemens_CV.pdf)", type: string }
+      - { name: email, label: Email, type: string }
+      - { name: location, label: Location, type: string }
+      - { name: coordinates, label: Coordinates, type: string }
+      - { name: pronouns, label: Pronouns, type: string }
+      - { name: visitor_map_script, label: Visitor map code (ClustrMaps), type: code }
+      - { name: site_url, label: Site address, type: string }
+
+  - name: guestbook
+    label: Your Presence (visitor notes)
+    type: file
+    path: content/guestbook.yml
+    list: true
+    fields:
+      - { name: name, label: Name, type: string }
+      - { name: location, label: Location, type: string }
+      - { name: message, label: Message, type: text }
+      - { name: date, label: "Date (as in the email, e.g. 9 Nov 2026)", type: string }
+      - { name: approved, label: "Approved (show on the board)", type: boolean }
+      - name: color
+        label: Note colour
+        type: select
+        options: { values: [ yellow, mint, sky, pink, peach ] }

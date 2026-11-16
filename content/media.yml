@@ -1,0 +1,114 @@
+# "In the News" page: newspaper features that mention me. Newest first.
+press:
+  - outlet: Samakal
+    outlet_bn: সমকাল
+    title: "জাহাঙ্গীরনগর ইউনিভার্সিটি ডিবেটিং অর্গানাইজেশন: বিজয়ী তিন তর্কযোদ্ধা"
+    lang: bn
+    byline: সুমাইয়া রোকনী
+    date: ""
+    image: img/news/samakal-judo.jpg
+    note: "Feature on the Geography and Environment debate team (Rashedul Islam, Al Rabby Siemens and Ishtiak Ahmed) winning JUDO's online inter-department tournament; I led the team and was named Debater of the Tournament and Debater of the Final."
+    url: ""
+  - outlet: Prothom Alo
+    outlet_bn: প্রথম আলো
+    title: "বিতর্ক উৎসব: যুক্তি ও পাল্টা যুক্তির লড়াই"
+    lang: bn
+    byline: ""
+    date: ""
+    image: img/news/prothomalo-debate.jpg
+    image_label: View full photo
+    note: "Coverage of the ActionAid-Prothom Alo debate festival, with the award-winning debaters and guests on stage."
+    url: "https://www.prothomalo.com/bangladesh/capital/%E0%A6%AC%E0%A6%BF%E0%A6%A4%E0%A6%B0%E0%A7%8D%E0%A6%95-%E0%A6%89%E0%A7%8E%E0%A6%B8%E0%A6%AC-%E0%A6%AF%E0%A7%81%E0%A6%95%E0%A7%8D%E0%A6%A4%E0%A6%BF-%E0%A6%93-%E0%A6%AA%E0%A6%BE%E0%A6%B2%E0%A7%8D%E0%A6%9F%E0%A6%BE-%E0%A6%AF%E0%A7%81%E0%A6%95%E0%A7%8D%E0%A6%A4%E0%A6%BF%E0%A6%B0-%E0%A6%B2%E0%A7%9C%E0%A6%BE%E0%A6%87"
+
+# Videos page. Titles of YouTube videos load automatically; add "title:" to any item to set it yourself.
+video_page:
+  featured: jLMz4R70NjI
+  playlists:
+    - { title: "এইচএসসি ভূগোল ১ম পত্র", sub: HSC Geography 1st Paper, count: 112, list: PLuaHF6yUT-71Zl7qkIVTCCjFn6kJJDXEj, channel: 10 Minute School }
+    - { title: "এইচএসসি ভূগোল ২য় পত্র", sub: HSC Geography 2nd Paper, count: 101, list: PLuaHF6yUT-71yrQM0HXwC3h58HE6RxT1J, channel: 10 Minute School }
+    - { title: "এক ভিডিওতে এক টপিক", sub: HSC Geography, count: 6, list: PLFBrPBu1Ty_eAYPqLc1d9EN0iwYY_F6St, channel: 10 Minute School }
+  hsc: [jLMz4R70NjI, XwGhZELqhDM, untMckVMq-I, puRcIyXCWS0, k0QP5DhSXLU]
+  bcs: [UCcOxQbqLd4, 6mQX0oE_kOk, nRdOrLVe8rg, OD5KO-TiZRA, 8p9QiuRbQxc, tjCMKA5mfmg]
+  # Facebook videos that are not mine: put the uploader's name in "credit".
+  moments:
+    - title: Last days at the Department
+      note: "The final days with my batch at the Department of Geography and Environment, Jahangirnagar University: classrooms, corridors and friendships that shaped me."
+      url: https://www.facebook.com/share/v/14xNgAvU5WX/
+      credit: ""
+    - title: Geo 47
+      note: "Geo 47, my batch at the Department of Geography and Environment, Jahangirnagar University."
+      url: https://www.facebook.com/reel/860786529213353
+      credit: ""
+    - title: At the Bay of Bengal Conference
+      note: "Moments from the Bay of Bengal Conference."
+      url: https://www.facebook.com/100009688806540/videos/pcb.2355383811461223/2360446647636949
+      credit: ""
+
+# Videos: for YouTube, paste the normal video link. For 10 Minute School or other sites, paste the link and (optionally) a thumbnail image.
+videos: []
+#  - title: Video title
+#    url: https://www.youtube.com/watch?v=XXXXXXXXXXX
+#    platform: YouTube
+#  - title: Lesson title
+#    url: https://10minuteschool.com/...
+#    platform: 10 Minute School
+#    thumbnail: img/videos/lesson.jpg
+
+# Gallery: upload photos to static/img/gallery/ and list them here.
+gallery:
+  - title: Farewell, Batch 261
+    when: "2026"
+    place: BUFT, Dhaka
+    images: [img/gallery/buft-farewell-1.jpg, img/gallery/buft-farewell-2.jpg]
+    text: |
+      Another wonderful semester has come to an end at BUFT as an Adjunct Faculty. It was a pleasure teaching Bangladesh Studies to such kind, respectful and enthusiastic students.
+
+      Thank you, Batch 261_1 & 261_4, for all the memories and love. I will truly miss our classes. Wishing you all the very best for a bright and successful future. Keep learning and keep shining! ❤️
+  - title: Lessons Among the Leaves
+    place: BUFT, Dhaka
+    images: [img/gallery/buft-leaves.jpg]
+    text: |
+      I love teaching at BUFT as an Adjunct Faculty! Guiding students in Environmental Ecology and lab work is fun and inspiring. I enjoy seeing their curiosity, questions, and lightbulb moments as they connect what we learn in class to real-life environmental challenges. Every class keeps me excited and learning too!
+  - title: Project BRAVE, Ukhiya
+    when: "2025"
+    place: Ukhiya, Cox's Bazar
+    images: [img/gallery/brave-1.jpg, img/gallery/brave-5.jpg, img/gallery/brave-3.jpg, img/gallery/brave-4.jpg, img/gallery/brave-2.jpg]
+    text: |
+      I had the opportunity to serve as a guest speaker at Abul Kashem Noor Jahan Chowdhury High School, Ukhiya, Cox's Bazar - a region highly prone to natural disasters such as cyclones, floods, and landslides.
+
+      Thanks to the kind invitation of Teach For Bangladesh Fellow SM Rashedul Islam, I conducted a session on "Preparedness Amid Adversity" (প্রতিকূলতার মধ্যে সুরক্ষা প্রস্তুতি) under the project BRAVE (Building Resilience Against Vulnerabilities and Emergencies), focusing on building awareness and capacity for disaster risk reduction. The enthusiastic students actively participated and learned about:
+
+      - ⚠️ Introduction to Hazard, Disaster, Vulnerability, and Risk
+      - 🔄 The Disaster Management Cycle
+      - 🗓️ Hazard Calendar Development
+      - 🗺️ Community Mapping and Designing Evacuation Routes
+
+      It was truly inspiring to see young learners so engaged in understanding how to protect their communities through planning, knowledge, and teamwork. Empowering youth with disaster awareness today means building a resilient tomorrow.
+
+      It was also heartening to see that the students are well-informed about e-learning and digital education, especially 10 Minute School. It proves how deeply 10 Minute School has reached even the most remote corners of the country.
+  - title: 29 NST Fellows from Batch 47
+    when: "2024"
+    place: Dept. of Geography and Environment, JU
+    images: [img/gallery/nst-47-batch.jpg]
+    text: |
+      From the 47th batch of the Department of Geography and Environment, Jahangirnagar University, an impressive 29 students (including myself) have been awarded the National Science and Technology (NST) Fellowship! And let's not forget - many of our batchmates didn't apply as they have chosen different paths, such as pursuing higher studies abroad, securing jobs in the government and private sectors, or preparing for BCS written and other competitive exams.
+  - title: Bay of Bengal Conversation 2024
+    when: "2024"
+    place: Dhaka
+    images: [img/gallery/bay-of-bengal-2024.jpg]
+    text: |
+      The ceremony began with a speech by Chief Advisor Dr. Muhammad Yunus, followed by Quiroga Ramirez (Former President of Bolivia), Mahathir Mohamad (Former Prime Minister of Malaysia), and concluded with Boris Tadic (Former President of Serbia). It was an amazing experience engaging with world-renowned professors, policymakers, scientists, ambassadors, and high commissioners. I also had the chance to interact with researchers and share my perspectives.
+  - title: Brothers in Excellence
+    place: 10 Minute School, Dhaka
+    images: [img/gallery/10ms-award.jpg]
+    text: |
+      On this memorable day, my brother Arafat Samir Abir and I were honored by 10 Minute School for our contributions to academic content creation. Through dedication and teamwork, we played a key role in crafting educational resources that impacted countless students. I was awarded the Speed Master title, while Arafat received the Mr. Perfectionist Award.
+  - title: First Debate Win
+    when: "2019"
+    place: Rotaract Debate Competition, Dhaka
+    images: [img/gallery/debate-2019.jpg]
+    text: |
+      One of the memorable milestones in my journey was winning my very first debate championship at the Rotaract Debate Competition 2019, alongside my friend Prapti Taposhi and our senior Rokeya Asha. This achievement was not just about winning but about learning the importance of teamwork, effective communication, and the value of constructive arguments.
+#  - image: img/gallery/tanguar-haor.jpg
+#    caption: Tanguar Haor, monsoon
+#    place: Sunamganj

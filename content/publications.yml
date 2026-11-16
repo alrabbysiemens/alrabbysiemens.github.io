@@ -1,0 +1,118 @@
+# Categories (in this order): book, chapter, journal, proceeding, oped
+# status: published | under-review | in-progress
+# Put your name exactly as "Siemens, A. R." (or similar) - it will be shown in bold.
+- category: book
+  title: A book on climate change (in Bangla)
+  authors: Siemens, A. R.
+  venue: ""
+  year: ""
+  status: in-progress
+  doi: ""
+  url: ""
+
+- category: chapter
+  title: "Scenarios of Climate Change Impact, Adaptation and Mitigation Strategies in India: A Critical Review"
+  authors: Islam, Md. N., Tamanna, S., Siemens, A. R., et al.
+  venue: "India III: Climate Change and Landscape Issues in India (pp. 3–41). Springer"
+  year: "2025"
+  status: published
+  doi: 10.1007/978-3-031-85126-1_1
+- category: chapter
+  title: "Climate Change Diplomacy, Adaptation, and Mitigation Strategies in South Asian Countries: A Critical Review"
+  authors: Islam, M. N., Tamanna, S., Noman, M., Siemens, A. R., Islam, S. R., & Islam, M. S.
+  venue: "India II: Climate Change Impacts, Mitigation and Adaptation in Developing Countries (pp. 1–32). Springer"
+  year: "2022"
+  status: published
+  doi: 10.1007/978-3-030-94395-0_1
+- category: chapter
+  title: "Marine Pollution and Ecosystem Health: Challenges for Developing Sustainable Blue Economy"
+  authors: Islam, M. N., Tamanna, S., & Siemens, A. R.
+  venue: "Global Blue Economy (pp. 413–447). CRC Press"
+  year: "2022"
+  status: published
+  doi: 10.1201/9781003184287-15
+
+- category: journal
+  title: "Geospatial and temporal assessment of Belai Beel: a seasonally flooded freshwater wetland in Bangladesh with special reference to its socio-ecological condition"
+  authors: Islam, M. N., Siemens, A. R., & Biswas, R. N.
+  venue: "Discover Environment, 3, 262"
+  year: "2025"
+  status: published
+  doi: 10.1007/s44274-025-00470-w
+- category: journal
+  title: "Modeling management strategies for shrimp farming impact on the coastal delineation near the Northern Bay of Bengal in Bangladesh"
+  authors: Siemens, A. R., & Islam, Md. N.
+  venue: "Regional Studies in Marine Science, 91, 104496"
+  year: "2025"
+  status: published
+  doi: 10.1016/j.rsma.2025.104496
+- category: journal
+  title: "Leveraging Open-Source GIS and Remote Sensing for Sustainable Groundwater Management: A Case Study of Dhaka City"
+  authors: Rahman, Z., Siemens, A. R., Debnath, S., & Islam, M.
+  venue: "Bangladesh Research Foundation Journal, 9, 75–93"
+  year: "2025"
+  status: published
+  doi: 10.71386/BRFJ.9.2.2025.75-93
+- category: journal
+  title: "Shoreline change analysis and sustainable coastal management for Kutubdia island: Trends, vegetation impact, and future projections"
+  authors: Hossain, E., Tahia, F., Islam, Md. S., Siemens, A. R., Rahman, Z., & Ahmad, I.
+  venue: "7(2), 139–149"
+  year: "2025"
+  status: published
+  doi: 10.59619/ej.7.2.7
+- category: journal
+  title: "Spatiotemporal Dynamics of Land Use Change in Narayanganj Sadar (2002–2023) and Forecasting for 2035 Using CA-Markov Modeling"
+  authors: Hossain, E., Tahia, F., Siemens, A. R., Islam, M., Rahman, Z., & Ahmad, I.
+  venue: "Journal of Geographic Information System, 17, 143–165"
+  year: "2025"
+  status: published
+  doi: 10.4236/jgis.2025.173008
+
+- category: proceeding
+  title: "Climate Change, Shoreline Dynamics and Future Land Loss Projections: Kutubdia Island for Sustainable Coastal Management"
+  authors: Hossain, E., Tahia, F. J., Siemens, A. R., Islam, M. S., Rahman, Z., & Ahmad, I.
+  venue: "3rd International Conference on Advancement of Life Sciences (ICALS 2025), MBSTU, p. 53"
+  year: "2025"
+  status: published
+  doi: ""
+  url: "https://www.researchgate.net/publication/399457862_Climate_Change_Shoreline_Dynamics_and_Future_Land_Loss_Projections_Kutubdia_Island_for_Sustainable_Coastal_Management"
+- category: proceeding
+  title: "Assessing Cyclone Shelter Site Suitability with GIS-AHP: A Study on Barguna District"
+  authors: Islam, M. S., Siemens, A. R., Hossain, E., Rahman, Z., & Ahmad, I.
+  venue: "3rd International Conference on Advancement of Life Sciences (ICALS 2025), MBSTU, p. 94"
+  year: "2025"
+  status: published
+  doi: ""
+  url: "https://www.researchgate.net/publication/399458089_Assessing_Cyclone_Shelter_Site_Suitability_with_GIS-AHP_A_Study_on_Barguna_District"
+- category: proceeding
+  title: "Modeling Flood Vulnerability: Spatial Dynamics of Risk and Livelihoods in Narsingdi District, Bangladesh"
+  authors: Rahman, Z., Siemens, A. R., Islam, M. S., Hossain, E., Ahmad, I., Debnath, S., & Tahia, F. J.
+  venue: "3rd International Conference on Advancement of Life Sciences (ICALS 2025), MBSTU, p. 73"
+  year: "2025"
+  status: published
+  doi: ""
+  url: "https://www.researchgate.net/publication/399458124_Modeling_Flood_Vulnerability_Spatial_Dynamics_of_Risk_and_Livelihoods_in_Narsingdi_District_Bangladesh"
+
+- category: oped
+  authors: "Siemens, A. R."
+  title: "Govt's Synergic River Plan: From Teesta to Ganges"
+  venue: "The Daily Times of Bangladesh, 26 October 2026"
+  year: "2026"
+  status: published
+  url: "https://epaper.tob.news/news/2026-10-26/2528"
+
+- category: oped
+  authors: "Siemens, A. R."
+  title: "From Zia to Tarique: The return of participatory environmental governance"
+  venue: "Dhaka Stream, 3 July 2026"
+  year: "2026"
+  status: published
+  url: "https://www.dhakastream.net/opinion/zia-tarique-return-participatory-environmental-governance-196568"
+
+- category: oped
+  authors: "Siemens, A. R."
+  title: "The Ganges Treaty after 2026: An eco-diplomatic test for the BNP government"
+  venue: "Dhaka Stream, 2 July 2026"
+  year: "2026"
+  status: published
+  url: "https://www.dhakastream.net/opinion/ganges-treaty-after-2026-eco-diplomatic-test-bnp-government-196541"

@@ -1,0 +1,6 @@
+{% extends "base.html" %}
+{% block kicker %}<p class="crumb mono">ERROR 404 · OFF THE MAP</p>{% endblock %}
+{% block h1 %}This page isn't on the map{% endblock %}
+{% block main %}
+<div class="wrap narrow"><p class="lead">The page you were looking for may have moved. <a href="{{ url('') }}">Go back home →</a></p></div>
+{% endblock %}

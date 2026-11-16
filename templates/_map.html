@@ -1,0 +1,18 @@
+{# Bangladesh map with numbered study sites. Needs: projects, bd #}
+<svg class="bd-map" role="img" aria-labelledby="maptitle" viewBox="-10 -10 {{ bd.W + 20 }} {{ bd.H + 20 }}">
+  <title id="maptitle">Map of Bangladesh showing study sites</title>
+  <defs><pattern id="bdgrid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" fill="none" class="map-grid"/></pattern></defs>
+  <rect x="-10" y="-10" width="{{ bd.W + 20 }}" height="{{ bd.H + 20 }}" fill="url(#bdgrid)"/>
+  <g class="dists">{% for d in districts %}<path d="{{ d.d }}"><title>{{ d.label }}</title></path>{% endfor %}</g>
+  <path class="outline" d="{{ bd.d }}"/>
+      {% include "_rivers.html" %}
+  {% for pr in projects if pr.num %}
+  <a href="{{ maplink or "" }}#{{ pr.slug }}" class="site site-{{ pr.theme }}">
+    <title>{{ pr.num }}. {{ pr.title }} - {{ pr.place }}</title>
+    <circle cx="{{ pr.x }}" cy="{{ pr.y }}" r="14"/>
+    <text x="{{ pr.x }}" y="{{ pr.y + 4.5 }}" text-anchor="middle">{{ pr.num }}</text>
+  </a>
+  {% endfor %}
+  <g class="north" transform="translate({{ bd.W - 26 }},40)"><path d="M0 -22V14M-6 -10L0 -22L6 -10"/><text x="0" y="30" text-anchor="middle">N</text></g>
+  <text class="sea" x="150" y="{{ bd.H - 20 }}">Bay of Bengal</text>
+</svg>

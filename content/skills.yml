@@ -1,0 +1,24 @@
+- field: GIS & Remote Sensing
+  icon: satellite
+  items: [ArcGIS, ArcGIS Pro, Google Earth Pro, Google Earth Engine (basic), ERDAS Imagine (basic), GeoAI]
+- field: Statistical analysis
+  icon: chart
+  items: [Python (basic), R (basic), SPSS, OriginLab]
+- field: Machine learning (basic)
+  icon: network
+  items: [Regression, SVM, Decision Trees, Random Forest, K-Means, DBSCAN]
+- field: Field data collection
+  icon: clipboard
+  items: [Questionnaire survey, FGD, KII, RRA, PRA, Observation]
+- field: Digital survey tools
+  icon: tablet
+  items: [KoBoToolbox, SurveyCTO, Google Forms, Google My Maps]
+- field: Research tools
+  icon: books
+  items: [Zotero, Mendeley]
+- field: Project work
+  icon: team
+  items: [Team building, Field team leadership, Survey direction, Report writing]
+- field: Communication
+  icon: mic
+  items: [Teaching, Presenting, Debating, Content reviewing, Sports commentary]

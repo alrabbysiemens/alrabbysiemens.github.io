@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block lang %}{{ w.lang }}{% endblock %}
+{% block bodyclass %}personal{% endblock %}
+{% block description %}{{ w.summary or w.title }}{% endblock %}
+{% block kicker %}<p class="crumb mono"><a href="{{ url('writing/') }}">WRITING</a> / {{ w.date_str|upper }} · {{ w.minutes }} MIN READ<span class="reads" data-count="1" data-key="{{ w.slug }}" data-base="{{ w.reads }}">{% if w.reads_str %} · {{ w.reads_str }} READS{% endif %}</span></p>{% endblock %}
+{% block h1 %}<span class="{{ 'bn' if w.lang == 'bn' }}">{{ w.title }}</span>{% endblock %}
+{% block subtitle %}<p class="byline">{% if w.lang == 'bn' %}<span class="bn">লেখক: আল রাব্বী সিমেন্স</span>{% else %}By Al Rabby Siemens{% endif %}</p>{% endblock %}
+{% block main %}
+<article class="wrap narrow">
+  <div class="paper ruled prose {{ 'bn' if w.lang == 'bn' }}">
+    {% if w.image and w.cover_in_post != false %}<figure class="wu-fig"><img src="{{ base }}{{ w.image|asset }}" alt="{{ w.caption or w.title }}">{% if w.caption %}<figcaption>{{ w.caption }}</figcaption>{% endif %}</figure>{% endif %}
+    {{ w.html }}
+  </div>
+  <div class="note-cta">
+    <p>{% if w.lang == 'bn' %}<span class="bn">লেখাটি কেমন লাগলো? আমার বোর্ডে একটা নোট রেখে যান।</span>{% else %}Enjoyed this piece? Leave a note on my board.{% endif %}</p>
+    <button type="button" class="note-open note-btn">📌 {% if w.lang == 'bn' %}<span class="bn">নোট রেখে যান</span>{% else %}Leave a note{% endif %}</button>
+  </div>
+  <nav class="wu-nav" aria-label="More write-ups">
+    {% if older %}<a class="wu-prev" href="{{ url('writing/' ~ older.slug ~ '/') }}"><span class="mono small">← PREVIOUS</span><span class="{{ 'bn' if older.lang == 'bn' }}">{{ older.title }}</span></a>{% else %}<span></span>{% endif %}
+    {% if newer %}<a class="wu-next" href="{{ url('writing/' ~ newer.slug ~ '/') }}"><span class="mono small">NEXT →</span><span class="{{ 'bn' if newer.lang == 'bn' }}">{{ newer.title }}</span></a>{% else %}<span></span>{% endif %}
+  </nav>
+  <p class="back"><a href="{{ url('writing/') }}">← All write-ups</a></p>
+</article>
+{% endblock %}

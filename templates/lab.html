@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block h1 %}<span class="siem-word"><b>SIEM</b> <i>Lab</i></span>{% endblock %}
+{% block kicker %}<p class="crumb mono">RESEARCH / SIEM LAB</p>{% endblock %}
+{% block subtitle %}<p class="subtitle">{% from "_siem.html" import siem_tag %}{{ siem_tag() }}</p>{% endblock %}
+{% macro lab_icon(k) -%}
+<svg viewBox="0 0 32 32" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+{%- if k == 'wetland' %}<path d="M3 20c3 0 3 2 6 2s3-2 6-2 3 2 6 2 3-2 6-2"/><path d="M3 26c3 0 3 2 6 2s3-2 6-2 3 2 6 2 3-2 6-2"/><path d="M10 18V6M10 10c-3 0-4-2-4-4 3 0 4 2 4 4zM18 18V9M18 12c3 0 4-2 4-4-3 0-4 2-4 4"/>
+{%- elif k == 'climate' %}<circle cx="11" cy="11" r="4"/><path d="M11 3v2M3 11h2M5.3 5.3l1.4 1.4M16.7 5.3l-1.4 1.4"/><path d="M12 25h13a4 4 0 0 0 0-8 6 6 0 0 0-11.5 1.5A3.5 3.5 0 0 0 12 25z"/>
+{%- elif k == 'leaf' %}<path d="M6 26C6 13 14 6 27 5c0 13-7 21-19 21z"/><path d="M6 26 18 14"/>
+{%- elif k == 'community' %}<circle cx="16" cy="9" r="3.5"/><circle cx="7" cy="13" r="3"/><circle cx="25" cy="13" r="3"/><path d="M10 26c0-4 2.7-7 6-7s6 3 6 7M2 25c0-3 2-5 5-5M30 25c0-3-2-5-5-5"/>
+{%- elif k == 'policy' %}<path d="M16 4v24M8 28h16"/><path d="M6 9h20"/><path d="M6 9l-4 9h8zM26 9l-4 9h8z"/>
+{%- elif k == 'growth' %}<path d="M4 27h24"/><path d="M8 23v-5M14 23v-9M20 23v-7M26 23V8"/><path d="M6 14 13 8l5 4 8-8M22 4h4v4"/>
+{%- elif k == 'model' %}<path d="M16 3 28 10v12L16 29 4 22V10z"/><path d="M4 10l12 7 12-7M16 17v12"/>
+{%- else %}<rect x="4" y="5" width="24" height="18" rx="2"/><path d="M8 18l5-5 4 3 7-7"/><path d="M12 27h8"/>
+{%- endif %}</svg>
+{%- endmacro %}
+{% from "_siem.html" import siem_tag %}
+{% block main %}
+<div class="wrap lab">
+  <section class="lab-hero">
+    <div class="lab-logo"><img src="{{ base }}img/logos/siem-lab.png" alt="SIEM Lab - Sustainable Innovation for Environmental Management"></div>
+    <div class="lab-intro">
+      <p class="lab-pillars mono">{% for p in lab.pillars %}<span>{{ p|upper }}</span>{% endfor %}</p>
+      <p class="lab-mission">{{ lab.mission }}</p>
+    </div>
+  </section>
+
+  <h2 class="sub-h">Possible research areas</h2>
+  <ul class="lab-areas">
+    {% for a in lab.areas %}<li><span class="lab-ic">{{ lab_icon(a.icon) }}</span><b>{{ a.name }}</b></li>{% endfor %}
+  </ul>
+
+  <section class="lab-soon">
+    <span class="lab-soon-tag mono">COMING SOON</span>
+    <p>{{ lab.status }}</p>
+    <a class="btn" href="{{ base }}contact/">Interested? Get in touch</a>
+  </section>
+</div>
+{% endblock %}

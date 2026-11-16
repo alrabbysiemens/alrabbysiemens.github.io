@@ -1,0 +1,128 @@
+# The personal side. Add hobbies and trips any time.
+hometown:
+  name: Gaibandha
+  lat: 25.33
+  lon: 89.53
+# Districts you have visited (any spelling: Chittagong/Chattogram, Comilla/Cumilla, Bogra/Bogura … all work).
+# Where you live now and your ancestral home (shown in their own colours)
+current_home: Dhaka
+ancestral_home: Munshiganj
+visited_districts:
+  - Barguna
+  - Bhola
+  - Patuakhali
+  - Bandarban
+  - Chandpur
+  - Chattogram
+  - Cox's Bazar
+  - Cumilla
+  - Lakshmipur
+  - Dhaka
+  - Gazipur
+  - Gopalganj
+  - Manikganj
+  - Munshiganj
+  - Narayanganj
+  - Narsingdi
+  - Tangail
+  - Bagerhat
+  - Jashore
+  - Khulna
+  - Jamalpur
+  - Netrokona
+  - Sherpur
+  - Bogura
+  - Chapai Nawabganj
+  - Natore
+  - Rajshahi
+  - Dinajpur
+  - Gaibandha
+  - Lalmonirhat
+  - Nilphamari
+  - Panchagarh
+  - Rangpur
+  - Habiganj
+  - Maulvibazar
+  - Sunamganj
+  - Sylhet
+places:
+  - name: Dhaka
+    lat: 23.81
+    lon: 90.41
+    note: home for the last seven years
+# Hobbies shown as cards. icon: writing | travel | sports | reading | music | photography | cinema | cooking
+hobbies:
+  - { name: Writing, icon: writing, note: "Daily write-ups in Bangla and English, on cricket, politics, cinema and science." }
+  - { name: Travelling, icon: travel, note: "Exploring Bangladesh district by district - 37 of 64 so far." }
+  - { name: Sports, icon: sports, note: "Watching and analysing cricket and football tactics; wicketkeeper and centre-back on the field." }
+  - { name: Reading, icon: reading, note: "History, politics and Bangla literature." }
+  - { name: Cinema, icon: cinema, note: "Films from home and around the world, and the stories behind them." }
+  - { name: Music, icon: music, note: "Bangla band music and classics from around the world." }
+  - { name: Photography, icon: photography, note: "Catching patterns in everyday scenes." }
+  - { name: Cooking, icon: cooking, note: "Trying recipes in my own kitchen." }
+  - { name: Favourite foods, icon: food, note: "Nuts, salad, fruits, ice cream and chips (though I am diabetic!)." }
+trips: []
+#  - date: 2026-01
+#    place: Sylhet
+#    note: one line about the trip
+leadership:
+  - org: Geography Debating Club, Jahangirnagar University
+    logo: img/logos/geo-debating-club.png
+    role: Secretary General · Organizing Secretary
+    years: 2019–2022
+    points:
+      - Built a space where geography students could argue about the world they study, not just describe it.
+      - Believed that a good question about land, water or people is the start of good research.
+      - Learned that organising others is its own lesson in listening and responsibility.
+  - org: Jahangirnagar University Debate Organization (JUDO)
+    logo: img/logos/judo.png
+    role: Associate Organizing Secretary · Education and Research Secretary
+    years: 2019–2021
+    points:
+      - Debate taught me to understand the other side before answering it.
+      - Training younger debaters was a way of passing on the confidence others gave me.
+      - Reason and respectful disagreement are what keep a campus, and a country, healthy.
+  - org: BADHAN (voluntary blood donation)
+    logo: img/logos/badhan.png
+    role: Volunteer blood donor
+    years: 2018–present
+    points:
+      - Giving blood is the simplest way I know to help a stranger I will never meet.
+      - It reminds me that community is built in small, quiet acts.
+
+# Affiliations at a glance (Beyond Work page, below the map) - shown as stickers on a laptop; "note" appears on hover. Logos live in static/img/logos/.
+affiliations:
+  - group: Universities & schools
+    items:
+      - {name: Jahangirnagar University, logo: img/logos/ju.png, note: "B.Sc. & M.Sc., Research Assistant"}
+      - {name: BGMEA University of Fashion & Technology, logo: img/logos/buft.png, note: "Lecturer"}
+      - {name: Ahammad Uddin Shah Shishu Niketan School and College, logo: img/logos/auss.png, note: "School & college, Gaibandha"}
+      - {name: BAF Shaheen English Medium College, logo: img/logos/semc.png, note: "Junior Teacher, Geography"}
+  - group: Work, research & funders
+    items:
+      - {name: 10 Minute School, logo: img/logos/10-minute-school.png, note: "Speed Master · Geography instructor"}
+      - {name: Ministry of Science and Technology, logo: img/logos/most.png, note: "NST Fellow"}
+      - {name: University Grants Commission, logo: img/logos/ugc.png, note: "Research projects"}
+      - {name: HEAT Project (UGC & World Bank), logo: img/logos/heat.png, note: "System Innovation FabLab"}
+      - {name: Bangladesh Forest Department, logo: img/logos/forest-department.png, note: "SUFAL forests"}
+      - {name: Convention on Wetlands (Ramsar), logo: img/logos/ramsar.png, note: "Tanguar Haor"}
+  - group: Training
+    items:
+      - {name: ResGeo Lab, logo: img/logos/resgeo.png, note: "GeoAI bootcamp"}
+      - {name: Data Solution 360, logo: img/logos/datasolution360.png, note: "Data science & ML"}
+      - {name: Research Help Bangladesh, logo: img/logos/rhb.png, note: "SPSS, Zotero, KoBoToolbox"}
+      - {name: Bohubrihi, logo: img/logos/bohubrihi.png, note: "Python, ArcGIS"}
+      - {name: Udemy, logo: img/logos/udemy.png, note: "Prompt engineering"}
+  - group: Clubs, debate & community
+    items:
+      - {name: Jahangirnagar University Debate Organization, logo: img/logos/judo.png, note: "Debater of the Year"}
+      - {name: "Geography Debating Club, JU", logo: img/logos/geo-debating-club.png, note: "Home debate club"}
+      - {name: BADHAN, logo: img/logos/badhan.png, note: "Blood donor"}
+      - {name: Rotaract, logo: img/logos/rotaract.svg, note: "Champion, 2019"}
+      - {name: ActionAid - Prothom Alo Bandhushava, logo: img/logos/actionaid-prothomalo.png, note: "National debate champion"}
+  - group: Recognised by
+    items:
+      - {name: "Embassy of Nepal, Dhaka", logo: img/logos/nepal-embassy.png, note: "Essay prize, 2023"}
+      - {name: Uttara Academy Science Club, logo: img/logos/uasc.png, note: "GK Olympiad champion, 2023"}
+      - {name: Artsci Association, logo: img/logos/artsci.png, note: "Green Innovation, 1st runner-up"}
+      - {name: National Environmental Carnival, logo: img/logos/tel-carnival.png, note: "Crossword champion"}

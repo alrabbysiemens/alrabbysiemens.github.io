@@ -1,0 +1,160 @@
+# Projects page. Each item has a "group" that decides its section:
+#   research = Research Projects & Fellowships · assistant = Research Assistantship
+#   content  = Educational Content Projects    · field = Academic Field Reports
+# short / place / theme are used on the home page list (research group only).
+
+- group: research
+  org: Nagao Wetland Fund (Ramsar Convention Secretariat)
+  logo: img/logos/ramsar.png
+  role: Research Associate
+  title: "Modeling Community-led Conservation Strategy Integrating Science-Policy Nexus for Reducing the Degradation of Tanguar Haor (Ramsar Site No. 1031)"
+  short: Community-led conservation of Tanguar Haor
+  place: Tanguar Haor, Sunamganj (Ramsar Site 1031)
+  theme: water
+  supervisor: Professor Dr. Md. Nazrul Islam, Project Director
+  location: Dhaka, Bangladesh
+  dates: Nov. 2025 - Present
+  bullets:
+    - Developed 01 community-based conservation and restoration models for a Ramsar wetland-1031.
+    - Conducted 02 field surveys, 03 stakeholder consultations, and 10 GIS-based spatial analyses.
+    - Conducted 30+ household surveys, 02 FGDs, and 02 KIIs to support community-led conservation planning.
+
+- group: research
+  org: SUFAL Innovation Grant, Bangladesh Forest Department
+  logo: img/logos/forest-department.png
+  role: Research Associate
+  title: "Modeling Forest Health and Associated Topographic, Vegetation and Microclimatic Factors to Improve Forest Restoration Practices"
+  short: Forest health and restoration (SUFAL)
+  place: 7 forest areas across Bangladesh
+  theme: land
+  supervisor: Professor Dr. Md. Nazrul Islam, Project Director
+  location: Dhaka, Bangladesh
+  dates: Oct. 2023 - Dec. 2025
+  bullets:
+    - Lead field data collection team at 07 forest areas in Bangladesh with 10 members team.
+    - Produced 30+ thematic maps and technical analyses for forest restoration policies.
+    - Produced a framework to support forest restoration planning.
+
+- group: research
+  org: The Ministry of Science and Technology, Bangladesh
+  logo: img/logos/most.png
+  role: National Science and Technology (NST) Fellow
+  subrole: "Research Fellow [Merit no.: 46]"
+  title: ""
+  short: NST Fellowship, Ministry of Science and Technology
+  place: M.Sc. thesis research
+  theme: water
+  supervisor: ""
+  location: Dhaka, Bangladesh
+  dates: Dec. 2024
+  bullets:
+    - Awarded a BDT 60,000 competitive research fellowship to conduct Master's thesis research.
+    - Designed and implemented field surveys, data collection, and statistical analyses for the thesis project.
+
+- group: research
+  org: University Grant Commission
+  logo: img/logos/ugc.png
+  role: Enumerator, Data Collection Team
+  title: "Modeling on E-Learning Pragmatism to Mitigation Strategies of COVID-19 Impact on Public and Private University Education in Bangladesh"
+  short: E-learning and COVID-19 impact on university education
+  place: 3 universities in Bangladesh
+  theme: land
+  supervisor: Professor Dr. Md. Nazrul Islam, Project Director
+  location: Dhaka, Bangladesh
+  dates: Nov. 2024
+  bullets:
+    - Conducted questionnaire-based data collection from 100 students of 03 different universities.
+    - Ensured data quality and supported data entry and validation.
+
+- group: assistant
+  org: Department of Geography & Environment, Jahangirnagar University
+  logo: img/logos/ju.png
+  role: Research Assistant
+  title: ""
+  supervisor: Professor Dr. Md. Nazrul Islam, Department of Geography & Environment, Jahangirnagar University
+  supervisor_label: Research Supervisor
+  location: Dhaka, Bangladesh
+  dates: Sep. 2021 - Dec. 2024
+  bullets:
+    - Assisted in 4 interdisciplinary environmental and geospatial research projects.
+    - Contributed to 05 research proposal development, technical reports and peer-reviewed journal publications.
+    - Assisted as a Teaching Assistant (TA) and Research Assistant (RA) in undergraduate courses.
+
+- group: content
+  org: 10 Minute School
+  logo: img/logos/10-minute-school.png
+  role: Lead, Quality Assurance and Control
+  title: Master Book project
+  dates: Nov. 2025
+  description: "Led quality assurance and control for the Master Book project, reviewing content for accuracy, clarity and alignment with the curriculum, coordinating corrections with the content team and approving final material before publication."
+
+- group: content
+  org: 10 Minute School
+  logo: img/logos/10-minute-school.png
+  role: Content Reviewer
+  title: QAC Video Checking Phase
+  dates: Aug 2020 - Feb 2022
+  description: "I worked as a Content Reviewer during the QAC (Quality Assurance and Control) Video Checking Phase, where my primary responsibility was to evaluate and ensure the quality and accuracy of educational video content. I meticulously reviewed videos for clarity, accuracy, and alignment with the curriculum, ensuring that they met the required educational standards. My work helped maintain high-quality content for students, ensuring an effective and engaging learning experience."
+
+- group: content
+  org: 10 Minute School
+  logo: img/logos/10-minute-school.png
+  role: Instructor
+  title: Class 1-12 Academic Content Creation Project
+  dates: Dec 2019 - Feb 2022
+  description: "I worked as an Instructor for the Class 1-12 Academic Content Creation Project, where my role involved creating engaging and educational content for students across various subjects. I designed lesson plans, tutorials, and quizzes, ensuring the content was aligned with academic standards and tailored to meet the learning needs of students. My efforts contributed to the development of comprehensive educational materials that aimed to enhance the academic experience and promote effective learning."
+
+- group: content
+  org: 10 Minute School
+  logo: img/logos/10-minute-school.png
+  role: Quiz Creator
+  title: Academic Quiz Creation
+  dates: Jan 2020 - Sep 2020
+  description: "As an Instructor at 10 Minute School, I designed and developed academic quizzes for various subjects, ensuring they were engaging, aligned with the curriculum, and effectively assessed students' understanding."
+
+# ---- Academic field reports (Jahangirnagar University)
+- title: "Exploring Environmental and Social Dynamics: A Study on Sylhet Region, Bangladesh"
+  group: field
+  place: Sylhet Region
+  lat: 24.90
+  lon: 91.87
+  theme: land
+  role: Masters Field Report · 2021
+  funder: ""
+  summary: "Siemens, A.R (2021) Exploring Environmental and Social Dynamics: A Study on Sylhet Region, Bangladesh, Field report submitted to the Department of Geography and Environment, Jahangirnagar University, Savar, Dhaka-1342 Bangladesh"
+- title: "Assessing Plant Community Pattern at Jamtola Sea Beach (adjacent to Bay of Bengal) in Sundarbans using the Braun-Blanquet Cover-Abundance Scale"
+  group: field
+  place: Sundarbans Region
+  lat: 21.85
+  lon: 89.79
+  theme: water
+  role: 4th Year Field Report · 2020
+  funder: ""
+  summary: "Siemens, A.R (2020) Assessing Plant Community Pattern at Jamtola Sea Beach (adjacent to Bay of Bengal) in Sundarbans using the Braun-Blanquet Cover-Abundance Scale, Field report submitted to the Department of Geography and Environment, Jahangirnagar University, Savar, Dhaka-1342 Bangladesh."
+- title: "Anthropogenic and Climate Change Impact in Kuakata Sea Beach in Bay of Bengal: Tourism Promotion Opportunities and Challenges"
+  group: field
+  place: Patuakhali Region
+  lat: 21.82
+  lon: 90.12
+  theme: water
+  role: 3rd Year Field Report · 2019
+  funder: ""
+  summary: "Siemens, A.R (2019) Anthropogenic and Climate Change Impact in Kuakata Sea Beach in Bay of Bengal: Tourism Promotion Opportunities and Challenges, Field report submitted to the Department of Geography and Environment, Jahangirnagar University, Savar, Dhaka-1342 Bangladesh."
+- title: "Mapping and Mentoring of Coastal Environmental Degradation and Correlation with Socio-cultural Dimension at the Chittagong Coastal Region in Bangladesh"
+  group: field
+  place: "Chittagong, Chittagong Hill Tract, Cox's Bazar, St martin region"
+  lat: 22.30
+  lon: 91.78
+  theme: water
+  role: 2nd Year Field Report · 2018
+  funder: ""
+  summary: "Siemens, A.R (2018) Mapping and Mentoring of Coastal Environmental Degradation and Correlation with Socio-cultural Dimension at the Chittagong Coastal Region in Bangladesh, Field report submitted to the Department of Geography and Environment, Jahangirnagar University, Savar, Dhaka-1342 Bangladesh."
+- title: "Exploring Geography: Observations, Cross-Sectional Studies, and Community Insights at the Drought Prone Dinajpur Region of North-western Bangladesh"
+  group: field
+  place: Dinajpur Region
+  lat: 25.63
+  lon: 88.64
+  theme: land
+  role: 1st Year Field Report · 2017
+  funder: ""
+  summary: "Siemens, A.R (2017) Exploring Geography: Observations, Cross-Sectional Studies, and Community Insights at the Drought Prone Dinajpur Region of North-western Bangladesh, Field report submitted to the Department of Geography and Environment, Jahangirnagar University, Savar, Dhaka-1342 Bangladesh."

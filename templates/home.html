@@ -1,0 +1,127 @@
+{% extends "base.html" %}
+{% block bodyclass %}home{% endblock %}
+{% block header %}
+<header class="hero-sheet">
+  <svg class="contours" aria-hidden="true" viewBox="0 0 1440 760" preserveAspectRatio="xMidYMid slice">
+    <g class="grid"><path d="M0 210H1440"/><path d="M0 450H1440"/><path d="M0 690H1440"/><path d="M240 0V760"/><path d="M600 0V760"/><path d="M960 0V760"/><path d="M1320 0V760"/></g>
+    <g class="lines">
+      <path d="M1050 466C1046 385 1145 350 1215 365C1290 380 1315 450 1298 510C1280 570 1195 595 1130 572C1078 554 1052 515 1050 466Z"/>
+      <path class="index" d="M995 460C990 345 1128 295 1228 315C1335 335 1372 440 1350 525C1325 615 1205 650 1112 618C1035 592 998 530 995 460Z"/>
+      <path d="M940 455C932 300 1110 238 1240 265C1380 292 1430 430 1402 545C1372 662 1215 708 1095 668C995 635 945 550 940 455Z"/>
+      <path d="M885 450C875 255 1090 180 1250 215C1425 250 1490 420 1455 565C1418 715 1225 765 1080 718C955 678 890 570 885 450Z"/>
+      <path class="index" d="M-20 360C150 320 330 395 530 362S790 300 880 390"/>
+      <path d="M-20 420C140 390 320 450 520 425S780 375 875 450"/>
+      <path d="M-20 480C130 455 310 505 510 488S770 450 885 515"/>
+      <path d="M-20 540C120 520 300 560 500 550S760 525 895 580"/>
+      <path d="M-20 600C110 585 290 620 490 612S750 600 905 645"/>
+    </g>
+  </svg>
+  <div class="neatline" aria-hidden="true">
+    <span class="tick" style="left:16.6%">88°E</span><span class="tick" style="left:41.6%">89°E</span><span class="tick" style="left:66.6%">90°E</span><span class="tick" style="left:91.6%">91°E</span>
+    <span class="tick tick-y" style="top:59%">24°N</span>
+  </div>
+  {% include "_nav.html" %}
+  <div class="wrap hero">
+    <div class="hero-text">
+      <p class="kicker">{{ p.kicker }}</p>
+      {% set nm = p.name.rsplit(' ', 1) %}
+      <h1 class="hero-name" aria-label="{{ p.name }}"><span class="n-first">{{ nm[0]|upper }}</span> <span class="n-last">{{ nm[-1]|upper }}</span></h1>
+      <p class="tagline">{{ p.tagline }}</p>
+      <ul class="roles">{% for r in p.roles %}<li>{{ r }}</li>{% endfor %}</ul>
+      <div class="actions">
+        <a class="btn btn-primary" href="{{ url('research/') }}">Explore my research</a>
+        {% if p.cv_pdf %}
+        <a class="btn btn-ghost" href="{{ base }}{{ p.cv_pdf|asset }}" download>
+          <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 10l5 5 5-5M4 20h16"/></svg>Download CV</a>
+        {% else %}
+        <a class="btn btn-ghost" href="{{ url('publications/') }}">Publications</a>
+        {% endif %}
+        <button type="button" class="btn note-open note-btn">📌 Leave a note</button>
+      </div>
+      <ul class="chips">
+        {% for l in p.links if l.url %}<li><a href="{{ l.url }}" rel="me noopener" target="_blank">{{ icon(l.label, 15) }}{{ l.label }}</a></li>{% endfor %}
+        {% if p.email %}<li><a class="email-link" data-u="{{ p.email.split('@')[0] }}" data-d="{{ p.email.split('@')[1] }}" href="{{ url('contact/') }}"><svg class="pi" aria-hidden="true" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#A35A22" stroke-width="2.2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>Email</a></li>{% endif %}
+      </ul>
+    </div>
+    <figure class="hero-fig">
+      {% if p.photo %}
+      <img src="{{ base }}{{ p.photo|asset }}" alt="Portrait of {{ p.name }}" width="300" height="400">
+      {% else %}
+      <div class="monogram" aria-hidden="true">
+        <svg viewBox="0 0 300 400"><g fill="none" stroke="currentColor" stroke-width="1.2" opacity=".35">
+          <ellipse cx="150" cy="200" rx="40" ry="30"/><ellipse cx="152" cy="196" rx="75" ry="58"/><ellipse cx="154" cy="192" rx="110" ry="88"/><ellipse cx="156" cy="188" rx="145" ry="120"/></g>
+          <text x="150" y="214" text-anchor="middle">AR</text></svg>
+      </div>
+      {% endif %}
+      <figcaption>{% if p.photo and p.photo_caption %}<span class="fig-no">FIG. 1</span><span class="fig-text">{{ p.photo_caption }}</span>{% else %}<span>FIG. 1</span><span>{{ p.coordinates }}</span>{% endif %}</figcaption>
+    </figure>
+  </div>
+</header>
+{% endblock %}
+
+{% block main %}
+<section class="wrap glance" aria-label="Publications at a glance">
+  <a href="{{ url('publications/') }}#book"><b class="ok">{{ counts.book }}</b><span>Book{% if counts.book != 1 %}s{% endif %} (in progress)</span></a>
+  <a href="{{ url('publications/') }}#chapter"><b>{{ counts.chapter }}</b><span>International book chapters</span></a>
+  <a href="{{ url('publications/') }}#journal"><b>{{ counts.journal }}</b><span>Journal articles</span></a>
+  <a href="{{ url('publications/') }}#proceeding"><b>{{ counts.proceeding }}</b><span>Conference papers</span></a>
+  <a href="{{ url('publications/') }}#oped"><b>{{ counts.oped }}</b><span>Op-eds</span></a>
+</section>
+
+<section class="wrap section split">
+  <div class="split-main">
+    <div class="section-head"><h2>Research across Bangladesh</h2><a href="{{ url('research/') }}">All projects →</a></div>
+    <p class="lead">I use GIS, remote sensing, field surveys and modelling to study how wetlands, coasts, forests and cities are changing, and how communities and policy can respond.</p>
+    <ol class="mini-projects">
+      {% for pr in projects[:4] %}
+      <li><a href="{{ url('research/') }}#{{ pr.slug }}"><span class="dot-mark dot-{{ pr.theme }}" aria-hidden="true"></span><span><b>{{ pr.short or pr.title }}</b><small>{{ pr.place }}</small></span></a></li>
+      {% endfor %}
+    </ol>
+    <ul class="tags">{% for t in p.research_interests %}<li>{{ t }}</li>{% endfor %}</ul>
+  </div>
+  <figure class="map-card">
+    <a class="map-link" href="{{ url('about/beyond-work/') }}" aria-label="Districts I've visited: {{ beyond.visited_list|length }} of 64. Open Beyond Work">
+    <svg class="bd-map visit-map" role="img" aria-labelledby="hmaptitle" viewBox="-10 -10 {{ bd.W + 20 }} {{ bd.H + 20 }}">
+      <title id="hmaptitle">District map of Bangladesh: {{ beyond.visited_list|length }} of 64 districts visited</title>
+      {% for d in beyond.districts %}<path class="vd{% if d.visited %} on{% endif %}{% if d.home %} home{% endif %}{% if d.current %} cur{% endif %}{% if d.ancestral %} anc{% endif %}" d="{{ d.d }}"><title>{{ d.label }}{% if d.home %} - hometown{% elif d.current %} - where I live{% elif d.ancestral %} - ancestral home{% elif d.visited %} - visited{% endif %}</title></path>{% endfor %}
+      <path class="outline" d="{{ bd.d }}"/>
+      {% include "_rivers.html" %}
+      <g class="north" transform="translate({{ bd.W - 26 }},40)"><path d="M0 -22V14M-6 -10L0 -22L6 -10"/><text x="0" y="30" text-anchor="middle">N</text></g>
+    </svg>
+    </a>
+    <figcaption class="map-cap">
+      <span class="mono small">FIG. 2 · DISTRICTS I'VE VISITED</span>
+      <span class="visit-count"><b>{{ beyond.visited_list|length }}</b> <span>of 64</span></span>
+    </figcaption>
+    <p class="legend small"><span><i class="dot" style="background:var(--rust)"></i>Hometown</span><span><i class="dot" style="background:#7B3F8F"></i>Where I live</span><span><i class="dot" style="background:#C9A227"></i>Ancestral</span><span><i class="dot" style="background:#6FA597"></i>Visited</span></p>
+  </figure>
+</section>
+
+<section class="wrap section two-col">
+  <div>
+    <div class="section-head"><h2>Latest updates</h2></div>
+    <ul class="news">
+      {% for n in news %}<li><span class="mono date">{{ n.date|month }}</span><p>{{ n.text }}</p></li>{% endfor %}
+    </ul>
+  </div>
+  <div>
+    <div class="section-head"><h2>Selected publications</h2><a href="{{ url('publications/') }}">All →</a></div>
+    <ul class="pub-mini">
+      {% for pb in selected %}
+      <li><a href="{{ pb.doi_url or url('publications/') }}" {% if pb.doi_url %}target="_blank" rel="noopener"{% endif %}><b>{{ pb.title }}</b></a><small>{{ pb.venue }} · {{ pb.year }}</small></li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+
+{% if writeups %}
+<section class="wrap section">
+  <div class="section-head"><h2>From my desk</h2><a href="{{ url('writing/') }}">All write-ups →</a></div>
+  <div class="cards">
+    {% for w in writeups %}
+    <a class="card" href="{{ url('writing/' ~ w.slug ~ '/') }}"><span class="lang lang-{{ w.lang }}">{{ 'বাংলা' if w.lang == 'bn' else 'EN' }}</span><b class="{{ 'bn' if w.lang == 'bn' }}">{{ w.title }}</b><small>{{ w.date_str }} · {{ w.minutes }} min read<span class="reads" data-key="{{ w.slug }}" data-base="{{ w.reads }}">{% if w.reads_str %} · {{ w.reads_str }} reads{% endif %}</span></small></a>
+    {% endfor %}
+  </div>
+</section>
+{% endif %}
+{% endblock %}

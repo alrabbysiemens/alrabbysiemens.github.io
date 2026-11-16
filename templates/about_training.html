@@ -1,0 +1,26 @@
+{% extends "_about.html" %}
+{% block about %}
+<ol class="xp">
+  {% set ns = namespace(seen=[]) %}
+  {% for t in training if t.provider not in ns.seen %}
+  {% set ns.seen = ns.seen + [t.provider] %}
+  {% set group = training|selectattr('provider', 'equalto', t.provider)|list %}
+  <li class="xp-org">
+    <div class="xp-head">
+      {% if t.logo %}<img class="xp-logo" src="{{ base }}{{ t.logo|asset }}" alt="" width="48" height="48">{% endif %}
+      <div><h3>{{ t.provider }}</h3>{% if group|length > 1 %}<p class="xp-meta">{{ group|length }} courses</p>{% endif %}</div>
+    </div>
+    <ol class="xp-roles{% if group|length > 1 %} multi{% endif %}">
+      {% for g in group %}
+      <li>
+        <div class="xp-role-top"><h4>{{ g.title }}</h4>{% if 'Present' in g.date %}<span class="xp-now">In progress</span>{% endif %}</div>
+        <p class="xp-type">{{ g.focus }} · {{ g.mode }}</p>
+        <p class="xp-dates mono">{{ g.date }}</p>
+        {% if g.learnings %}<p class="xp-kl">Key learnings</p><ul class="xp-list">{% for l in g.learnings %}<li>{{ l }}</li>{% endfor %}</ul>{% endif %}
+      </li>
+      {% endfor %}
+    </ol>
+  </li>
+  {% endfor %}
+</ol>
+{% endblock %}
