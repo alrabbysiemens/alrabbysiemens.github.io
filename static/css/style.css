@@ -8,7 +8,7 @@
   --serif:"Source Serif 4",Georgia,"Times New Roman",serif;
   --sans:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;
   --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
-  --hand:Caveat,"Segoe Print",cursive;
+  --hand:Caveat,Galada,"Segoe Print",cursive;
   --bn:"Noto Serif Bengali","Hind Siliguri",serif;
   --max:1200px;
 }
@@ -531,7 +531,7 @@ p{margin:0}
 .board{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:26px;padding:34px 28px;border-radius:12px;background:#C7A57A url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='6' height='6'%3E%3Ccircle cx='1' cy='1' r='.8' fill='%23a98657'/%3E%3Ccircle cx='4' cy='4' r='.6' fill='%23d6b88c'/%3E%3C/svg%3E");border:10px solid #8B6A44;box-shadow:inset 0 2px 8px rgba(0,0,0,.25);min-height:320px}
 .sticky{position:relative;margin:0;padding:22px 16px 14px;min-height:170px;box-shadow:0 6px 12px rgba(0,0,0,.18);display:flex;flex-direction:column;justify-content:space-between}
 .sticky:before{content:"";position:absolute;top:-7px;left:50%;width:14px;height:14px;margin-left:-7px;border-radius:50%;background:radial-gradient(circle at 35% 35%,#ff8a7a,#B0342A);box-shadow:0 2px 3px rgba(0,0,0,.35)}
-.sticky blockquote{margin:0;font:22px/1.25 'Caveat',cursive;color:#2a2a2a;word-wrap:break-word}
+.sticky blockquote{margin:0;font:22px/1.25 'Caveat','Galada',cursive;color:#2a2a2a;word-wrap:break-word}
 .sticky figcaption{margin-top:12px;font-size:13px;line-height:1.35;color:#333}
 .sticky figcaption span,.sticky figcaption small{display:block;color:#555}
 .sticky figcaption small{font-size:10.5px;margin-top:2px}
@@ -747,3 +747,4 @@ h1 .siem-word{font-size:.95em}
 .news-feat .date b{color:#fff;background:#b8901f;border-radius:8px;padding:1px 7px;font-size:10.5px;letter-spacing:.08em}
 .news-feat p{margin:6px 0 4px}
 .news-more{font-weight:600;font-size:14px;color:#4c8a3f}
+.sticky blockquote:lang(bn),.sticky blockquote.bn{font-size:21px;line-height:1.5}
