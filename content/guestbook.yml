@@ -44,3 +44,15 @@
   date: 17 Nov 2026
   color: pink
   approved: true
+- name: Md Tamjid Al Noor Pobon
+  location: Dhaka, Bangladesh
+  message: "A very well-organised portfolio. The research projects are clearly presented, well-written, and demonstrate considerable methodological depth. What particularly caught my attention, however, were the newspaper columns you have written. They add a distinctive and engaging dimension to your portfolio."
+  date: 17 Nov 2026
+  color: mint
+  approved: true
+- name: Zayn Atfi
+  location: ""
+  message: "Hey, here's a little note from me! Nothing fancy, just thought I'd drop by and say hello. 👀🤝"
+  date: 17 Nov 2026
+  color: peach
+  approved: true
