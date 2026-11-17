@@ -32,3 +32,15 @@
   date: 17 Nov 2026
   color: yellow
   approved: true
+- name: Mysha
+  location: Jahangirnagar University
+  message: "আকাশের সমান বড় হও।"
+  date: 17 Nov 2026
+  color: sky
+  approved: true
+- name: Puspa
+  location: Dhaka
+  message: "Wishing you great success! Now please don't become too busy to read this note! 🤣"
+  date: 17 Nov 2026
+  color: pink
+  approved: true
