@@ -187,3 +187,54 @@
   st.forEach(function(b){ b.addEventListener('mouseenter',function(){nudge(b);}); b.addEventListener('focus',function(){nudge(b);}); });
   st.forEach(function(b){ b.addEventListener('click',function(){ var was=b.classList.contains('on'); st.forEach(function(x){x.classList.remove('on');}); if(!was){ b.classList.add('on'); nudge(b); } }); });
 })();
+
+/* Today in Bangladesh: district of the day, live weather + clock, notebook line, gallery photo */
+(function(){
+  var box=document.getElementById('today-data'); if(!box) return;
+  var D; try{ D=JSON.parse(box.textContent); }catch(e){ return; }
+  var $=function(id){ return document.getElementById(id); };
+  var TZ='Asia/Dhaka';
+  function dhakaParts(d){ var o={}; new Intl.DateTimeFormat('en-GB',{timeZone:TZ,year:'numeric',month:'2-digit',day:'2-digit'}).formatToParts(d).forEach(function(p){o[p.type]=p.value;}); return o; }
+  var now=new Date(), P=dhakaParts(now);
+  var todayUTC=Date.UTC(+P.year,+P.month-1,+P.day), s=D.start.split('-'), startUTC=Date.UTC(+s[0],+s[1]-1,+s[2]);
+  var n=D.d.length, idx=(((Math.floor((todayUTC-startUTC)/864e5))%n)+n)%n, t=D.d[idx];
+  // district
+  document.querySelectorAll('.t2-map .dd').forEach(function(p){ p.classList.toggle('pick', p.getAttribute('data-n')===t.name); });
+  var pin=$('t2-pin'); if(pin) pin.setAttribute('transform','translate('+t.cx+','+t.cy+')');
+  $('t2-n').textContent=idx+1; $('t2-name').textContent=t.label; $('t2-bn').textContent=t.bn;
+  $('t2-div').textContent=t.division+' Division'; $('t2-fact').textContent=t.fact; $('wx-place').textContent=t.label.toUpperCase();
+  // Bangla date (revised Bangladesh calendar)
+  var bnd=function(x){ return String(x).replace(/\d/g,function(c){return '০১২৩৪৫৬৭৮৯'[c];}); };
+  function banglaDate(y,m,d){
+    var g=Date.UTC(y,m-1,d), by=y, b0=Date.UTC(y,3,14);
+    if(g<b0){ by=y-1; b0=Date.UTC(y-1,3,14); }
+    var off=Math.round((g-b0)/864e5), leap=((by+1)%4===0&&(by+1)%100!==0)||((by+1)%400===0);
+    var len=[31,31,31,31,31,31,30,30,30,30,leap?30:29,30], names=['বৈশাখ','জ্যৈষ্ঠ','আষাঢ়','শ্রাবণ','ভাদ্র','আশ্বিন','কার্তিক','অগ্রহায়ণ','পৌষ','মাঘ','ফাল্গুন','চৈত্র'], i=0;
+    while(i<11&&off>=len[i]){ off-=len[i]; i++; }
+    return bnd(off+1)+' '+names[i]+' '+bnd(by-593);
+  }
+  var dateEl=$('t2-date'); if(dateEl) dateEl.textContent=new Intl.DateTimeFormat('en-GB',{timeZone:TZ,weekday:'short',day:'numeric',month:'short',year:'numeric'}).format(now).toUpperCase()+' · '+banglaDate(+P.year,+P.month,+P.day);
+  // clock
+  function tick(){ var d=new Date();
+    $('wx-time').textContent=new Intl.DateTimeFormat('en-US',{timeZone:TZ,hour:'numeric',minute:'2-digit'}).format(d);
+    $('wx-date').textContent='· '+new Intl.DateTimeFormat('en-GB',{timeZone:TZ,weekday:'short',day:'numeric',month:'short',year:'numeric'}).format(d); }
+  tick(); setInterval(tick,15000);
+  // weather (Open-Meteo, free, no key)
+  var W={0:['Clear sky','☀️'],1:['Mainly clear','🌤️'],2:['Partly cloudy','⛅'],3:['Overcast','☁️'],45:['Fog','🌫️'],48:['Fog','🌫️'],51:['Light drizzle','🌦️'],53:['Drizzle','🌦️'],55:['Heavy drizzle','🌧️'],61:['Light rain','🌦️'],63:['Rain','🌧️'],65:['Heavy rain','🌧️'],80:['Rain showers','🌦️'],81:['Rain showers','🌧️'],82:['Violent showers','⛈️'],95:['Thunderstorm','⛈️'],96:['Thunderstorm','⛈️'],99:['Thunderstorm','⛈️']};
+  var BAND=[[15,'Cold','#2f5fa8','#4a86d1'],[22,'Cool','#1d7a86','#2fa3a8'],[28,'Mild','#1f7a5a','#2e9b6f'],[33,'Warm','#c27a12','#e0a32b'],[99,'Hot','#b8401f','#e0662e']];
+  var url='https://api.open-meteo.com/v1/forecast?latitude='+t.lat+'&longitude='+t.lon+'&current=temperature_2m,apparent_temperature,relative_humidity_2m,weather_code,wind_speed_10m&daily=temperature_2m_max,temperature_2m_min,sunset&timezone=Asia%2FDhaka&forecast_days=1';
+  fetch(url).then(function(r){ if(!r.ok) throw 0; return r.json(); }).then(function(j){
+    var c=j.current, T=Math.round(c.temperature_2m), w=W[c.weather_code]||['Weather','🌡️'], b=BAND.filter(function(x){return T<x[0];})[0];
+    var box=$('t2-wx'); box.style.setProperty('--wx1',b[2]); box.style.setProperty('--wx2',b[3]);
+    $('wx-ic').textContent=w[1]; $('wx-t').textContent=T+'°'; $('wx-s').textContent=b[1]+' · '+w[0];
+    $('wx-f').textContent='Feels like '+Math.round(c.apparent_temperature)+'° · in '+t.label+' now';
+    $('wx-h').textContent=Math.round(c.relative_humidity_2m)+'%'; $('wx-w').textContent=Math.round(c.wind_speed_10m)+' km/h';
+    $('wx-hl').textContent=Math.round(j.daily.temperature_2m_max[0])+'° / '+Math.round(j.daily.temperature_2m_min[0])+'°';
+    var ss=new Date(j.daily.sunset[0]+':00+06:00'); $('wx-ss').textContent=new Intl.DateTimeFormat('en-US',{timeZone:TZ,hour:'numeric',minute:'2-digit'}).format(ss);
+  }).catch(function(){ $('wx-s').textContent='Weather unavailable right now'; $('wx-ic').textContent='🌡️'; });
+  // notebook line + gallery photo: random each visit
+  var pick=function(a){ return a[Math.floor(Math.random()*a.length)]; };
+  var base=(document.querySelector('link[rel=stylesheet][href*="css/style.css"]')||{}).getAttribute? document.querySelector('link[rel=stylesheet][href*="css/style.css"]').getAttribute('href').split('css/style.css')[0] : '';
+  if(D.nb&&D.nb.length&&$('nb-q')){ var q=pick(D.nb); $('nb-q').textContent='"'+q.text+'"'; $('nb-t').textContent=q.title; $('nb-a').setAttribute('href',base+q.url); }
+  if(D.gp&&D.gp.length&&$('gp-img')){ var g=pick(D.gp); $('gp-img').src=base+g.src; $('gp-img').alt=g.title; $('gp-t').textContent=g.title; }
+})();

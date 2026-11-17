@@ -1,0 +1,86 @@
+# "Today in Bangladesh" on the home page.
+# District of the day: goes down this list one per day (Bangladesh time), starting on start_date, then repeats.
+# name must match the map's district name. Edit facts freely.
+start_date: 2026-11-17
+districts:
+  - {name: Panchagarh, division: Rangpur, fact: "Bangladesh's northern tip. On clear late-autumn mornings, Kanchenjunga is visible from Tetulia."}
+  - {name: Thakurgaon, division: Rangpur, fact: "Home to the giant Surjapuri mango tree of Baliadangi, said to be one of the largest mango trees in Asia."}
+  - {name: Dinajpur, division: Rangpur, fact: "Kantajew Temple here is one of the finest terracotta temples in Bengal, completed in the 1750s."}
+  - {name: Nilphamari, division: Rangpur, fact: "Saidpur's railway workshop, set up in 1870, is one of the oldest in the country. The Teesta Barrage stands nearby at Dalia."}
+  - {name: Lalmonirhat, division: Rangpur, fact: "The Tin Bigha Corridor at Patgram links the Dahagram-Angarpota enclave to the rest of Bangladesh."}
+  - {name: Kurigram, division: Rangpur, fact: "Where the Brahmaputra enters Bangladesh - a land of shifting chars shaped by the Brahmaputra, Teesta and Dharla."}
+  - {name: Rangpur, division: Rangpur, fact: "Begum Rokeya, pioneer of women's education in Bengal, was born at Pairaband in Mithapukur."}
+  - {name: Gaibandha, division: Rangpur, fact: "My hometown! Known for its rosh-monjuri sweet and the chars of the Brahmaputra-Jamuna."}
+  - {name: Joypurhat, division: Rajshahi, fact: "Home to one of the largest sugar mills in Bangladesh."}
+  - {name: Naogaon, division: Rajshahi, fact: "Somapura Mahavihara at Paharpur, an 8th-century Buddhist monastery, is a UNESCO World Heritage Site."}
+  - {name: Bogura, division: Rajshahi, fact: "Mahasthangarh, ancient Pundranagara, is one of the oldest urban sites in Bangladesh. Bogura's doi is famous too."}
+  - {name: Nawabganj, division: Rajshahi, fact: "Chapainawabganj is the mango capital of Bangladesh, and home to the Choto Sona Mosque of the Sultanate era."}
+  - {name: Rajshahi, division: Rajshahi, fact: "The Silk City on the Padma. Its Varendra Research Museum (1910) is the oldest museum in Bangladesh."}
+  - {name: Natore, division: Rajshahi, fact: "Immortalised in Jibanananda Das's 'Banalata Sen'. Natore Rajbari and part of Chalan Beel lie here."}
+  - {name: Sirajgonj, division: Rajshahi, fact: "The Jamuna Bridge lands on its bank, and its handloom weavers make famous saris and lungis."}
+  - {name: Pabna, division: Rajshahi, fact: "The Hardinge Bridge (1915) crosses the Padma at Paksey, and the Rooppur nuclear plant rises beside it."}
+  - {name: Sherpur, division: Mymensingh, fact: "Garo hills on the Meghalaya border, with Gajni and Madhutila forest parks."}
+  - {name: Jamalpur, division: Mymensingh, fact: "Between the Jamuna and the Old Brahmaputra, and well known for its nakshi kantha embroidery."}
+  - {name: Mymensingh, division: Mymensingh, fact: "On the Old Brahmaputra; home to Bangladesh Agricultural University and the Zainul Abedin museum."}
+  - {name: Netrokona, division: Mymensingh, fact: "Birishiri's blue-green Someshwari river and white china-clay hills draw travellers to Durgapur."}
+  - {name: Sunamganj, division: Sylhet, fact: "Tanguar Haor, a Ramsar wetland of international importance - where I work on community-led conservation."}
+  - {name: Sylhet, division: Sylhet, fact: "Tea gardens, Jaflong's stones and Ratargul, one of the few freshwater swamp forests in the country."}
+  - {name: Habiganj, division: Sylhet, fact: "Satchari National Park and rolling tea estates line its eastern hills."}
+  - {name: Maulvibazar, division: Sylhet, fact: "Sreemangal, the tea capital of Bangladesh, and the Lawachara rainforest are here."}
+  - {name: Tangail, division: Dhaka, fact: "Famous for Tangail saris and Porabari's chomchom."}
+  - {name: Kishoreganj, division: Dhaka, fact: "The vast haors of Mithamain, and Sholakia, home to one of the largest Eid congregations in the country."}
+  - {name: Gazipur, division: Dhaka, fact: "Bhawal National Park's sal forest sits next to one of the country's biggest industrial hubs."}
+  - {name: Narsingdi, division: Dhaka, fact: "Wari-Bateshwar's ruins reveal a fortified trading town over 2,000 years old."}
+  - {name: Manikganj, division: Dhaka, fact: "The Aricha-Paturia ferry crosses here, and Baliati zamindar palace still stands."}
+  - {name: Dhaka, division: Dhaka, fact: "The capital and where I live - Lalbagh Fort, Old Dhaka's lanes and the rickshaw capital of the world."}
+  - {name: Narayanganj, division: Dhaka, fact: "Sonargaon, the old capital of Isa Khan, and the colonial houses of Panam Nagar are here."}
+  - {name: Munshiganj, division: Dhaka, fact: "Ancient Bikrampur, birthplace of Atish Dipankar - and my ancestral home."}
+  - {name: Rajbari, division: Dhaka, fact: "Goalanda and Daulatdia sit near where the Padma and Jamuna meet."}
+  - {name: Faridpur, division: Dhaka, fact: "Birthplace of the rural poet Jasimuddin, at Ambikapur."}
+  - {name: Madaripur, division: Dhaka, fact: "Crossed by the Arial Khan river, with the old Shakuni Lake at the town's heart."}
+  - {name: Shariatpur, division: Dhaka, fact: "The southern end of the Padma Bridge lands at Janjira."}
+  - {name: Gopalganj, division: Dhaka, fact: "Tungipara, near the Madhumati river, is the birthplace of Sheikh Mujibur Rahman."}
+  - {name: Kushtia, division: Khulna, fact: "Lalon Shah's shrine at Cheuria and Tagore's Kuthibari at Shilaidaha make it the cultural heart of the region."}
+  - {name: Meherpur, division: Khulna, fact: "At Mujibnagar, the first government of Bangladesh took oath on 17 April 1971."}
+  - {name: Chuadanga, division: Khulna, fact: "Carew and Co. at Darshana is one of the oldest sugar mills and distilleries in the country."}
+  - {name: Jhenaidah, division: Khulna, fact: "Birthplace of Bir Sreshtho Hamidur Rahman."}
+  - {name: Magura, division: Khulna, fact: "Hometown of cricketer Shakib Al Hasan, on the Nabaganga river."}
+  - {name: Jashore, division: Khulna, fact: "Famous for date-palm molasses (khejur gur); Michael Madhusudan Dutt was born at Sagardari."}
+  - {name: Narail, division: Khulna, fact: "Home of the painter S. M. Sultan, on the Chitra river."}
+  - {name: Khulna, division: Khulna, fact: "The gateway city to the Sundarbans, on the Rupsha river."}
+  - {name: Satkhira, division: Khulna, fact: "On the edge of the Sundarbans, with shrimp farms across its coastal plains."}
+  - {name: Bagerhat, division: Khulna, fact: "The Sixty Dome Mosque of Khan Jahan Ali's mosque city is a UNESCO World Heritage Site."}
+  - {name: Brahmanbaria, division: Chattogram, fact: "Birthplace of the musician Ustad Alauddin Khan, often called the cultural capital."}
+  - {name: Cumilla, division: Chattogram, fact: "Mainamati's Buddhist ruins, khadi cloth and its famous rasmalai."}
+  - {name: Chandpur, division: Chattogram, fact: "Where the Padma meets the Meghna - the hilsa capital of Bangladesh."}
+  - {name: Feni, division: Chattogram, fact: "The Muhuri irrigation project at Sonagazi turned its estuary into a winter birding spot."}
+  - {name: Lakshmipur, division: Chattogram, fact: "On the Meghna estuary, known for soybean and coconut."}
+  - {name: Noakhali, division: Chattogram, fact: "Nijhum Dwip in Hatiya, with its herds of spotted deer, belongs to Noakhali."}
+  - {name: Pirojpur, division: Barishal, fact: "Its floating gardens (dhap) in Nazirpur grow vegetables on water through the monsoon."}
+  - {name: Jhalokati, division: Barishal, fact: "Bhimruli's floating guava market comes alive on boats every monsoon."}
+  - {name: Barishal, division: Barishal, fact: "The 'Venice of Bengal', laced with rivers - and birthplace of Jibanananda Das."}
+  - {name: Bhola, division: Barishal, fact: "Bangladesh's largest island, in the mouth of the Meghna."}
+  - {name: Patuakhali, division: Barishal, fact: "Kuakata is one of the rare beaches where you can watch both sunrise and sunset over the sea."}
+  - {name: Barguna, division: Barishal, fact: "The Tengragiri mangrove forest and Sonakata beach face the Bay of Bengal."}
+  - {name: Khagrachari, division: Chattogram, fact: "Alutila's dark cave and the Richhang waterfall are in these hills."}
+  - {name: Rangamati, division: Chattogram, fact: "Kaptai Lake, the largest man-made lake in Bangladesh, and Sajek valley in the clouds."}
+  - {name: Chattogram, division: Chattogram, fact: "Home of the country's busiest seaport, between the hills and the sea."}
+  - {name: Bandarban, division: Chattogram, fact: "The highest peaks of Bangladesh rise here, among them Keokradong and Saka Haphong."}
+  - {name: "Cox's Bazar", division: Chattogram, fact: "The longest natural sea beach in the world, and Saint Martin's Island."}
+
+# From my notebook: one line is shown at random on each visit. url = the write-up's address on the site.
+notebook:
+  - {text: "তাই সেই বাবুই পাখির বাসায় আর খড়কুটো যোগ করবেন না, তার জন্য চড়ুই পাখি আছে যে থাকে অট্টালিকা পরে।", title: "বাবুই পাখির বাসা", url: writing/2022-04-23-babui-pakhir-basa/}
+  - {text: "কিন্তু সকলের মায়ার ভীড়ে তার জন্য ছিঁড়ে আনা একটা ফুলের মায়া সে বুঝবেনা।", title: "বাবুই পাখির বাসা", url: writing/2022-04-23-babui-pakhir-basa/}
+  - {text: "তবে আমার মা-বাবা লেখাপড়ায় খুব বেশিদূর না আগালেও অনেক সার্টিফিকেটেড মানুষের চেয়েও জীবন নিয়ে তাঁদের উপলব্ধি অনেক বেশি ছিলো।", title: "আমাদের পরিবারের সবচেয়ে উজ্জ্বল দিন", url: writing/2022-01-08-ujjol-din/}
+  - {text: "ঘাড় ঘুরিয়ে পেছনে তাকালে, জেমস ওয়েব টেলিস্কোপের চেয়ে কম অতীত আমার চোখে ধরা দেয়না।", title: "স্কুল-কলেজের ওরা কই?", url: writing/2023-01-26-school-college-bondhu/}
+  - {text: "আমি চেঞ্জ পাইনা, লাগে ক্লাস ফোরে এখনো আমরা পাশাপাশি বসে লাকি ম্যাডামের ক্লাস করি!", title: "স্কুল-কলেজের ওরা কই?", url: writing/2023-01-26-school-college-bondhu/}
+  - {text: "আগুনে পুড়ে ছাই হয়ে আবার কীভাবে জন্ম নিতে হয়, তা জানতে নাজমুল হাসান শান্তকে আপনি পাঠ করবেন না?", title: "আমাদের ফিনিক্স পাখি শান্ত", url: writing/2023-06-16-phoenix-shanto/}
+  - {text: "কাজী হায়াৎ এর শক্তির জায়গা ছিলো দুটো, এক তাঁর স্ক্রিপ্টিং; দুই তাঁর সাহস।", title: "হায়াৎনামা", url: writing/2024-05-29-hayatnama/}
+  - {text: "Not everyone who smiles is happy and not everyone who seems strong is doing okay.", title: "But Doctor… I Am Pagliacci", url: writing/2025-01-03-i-am-pagliacci/}
+  - {text: "Sometimes, the person who makes the world smile is the one who needs a reason to smile the most.", title: "But Doctor… I Am Pagliacci", url: writing/2025-01-03-i-am-pagliacci/}
+  - {text: "আবার মাঝে মাঝে মনে হয় ভেসে আছি, থইথই পানির শব্দ, ভিয়েতনামের রেইন ফরেস্ট।", title: "হায় ভালোবাসি", url: writing/2025-05-21-hay-bhalobashi/}
+  - {text: "ধরেন আপনি একটা কমলা খাচ্ছেন, এই কমলার খোসাগুলো ছিড়ে ভেতরের আবরণ বের করলেন।", title: "ভূমিকম্প: কখন হবে, কেন হয়, আর কীভাবে বাঁচবো", url: writing/2025-11-23-bhumikompo/}
+  - {text: "For centuries, the river system has served as the backbone of Bangladesh's socio-economic development and ecological sustainability.", title: "From Teesta to Ganges", url: writing/2026-10-26-teesta-to-ganges/}
+  - {text: "The next treaty should clearly depart from this model and consider a Basin-wide river governance approach.", title: "The Ganges Treaty after 2026", url: writing/2026-07-02-ganges-treaty-after-2026/}
+  - {text: "একবারের জন্যও কল্পনা করার সাহস হয়নাই যে বাংলাদেশ অস্ট্রেলিয়ার মাটিতে গিয়ে অস্ট্রেলিয়াকে টেস্ট হারাবে!", title: "যে স্বপ্ন দেখার সাহসও হয়নি", url: writing/2026-11-08-australia-test-jay/}

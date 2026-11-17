@@ -115,6 +115,19 @@ RIVER_LABELS = [{"name": n, "x": round((lo - BD["lon0"]) * BD["kx"], 1), "y": ro
                                      ("Meghna", 22.85, 90.84, 74), ("Old Brahmaputra", 24.72, 90.18, 46), ("Surma", 25.13, 91.55, 0),
                                      ("Kushiyara", 24.55, 91.78, 18), ("Brahmaputra", 25.55, 89.82, 80)]]
 beyond["districts"] = district_map
+# ---- Today in Bangladesh (home) ----
+TODAY = yaml.safe_load((ROOT / "content" / "today.yml").read_text(encoding="utf-8")) or {}
+_BN_FIX = {"Nawabganj": "চাঁপাইনবাবগঞ্জ", "Narayanganj": "নারায়ণগঞ্জ", "Cox's Bazar": "কক্সবাজার", "Rajbari": "রাজবাড়ী"}
+_dmap = {d["name"]: d for d in DISTRICTS}
+today_districts = []
+for t in TODAY.get("districts") or []:
+    d = _dmap.get(t["name"])
+    if not d:
+        print("WARNING: unknown district in today.yml:", t["name"]); continue
+    today_districts.append({"name": d["name"], "label": DISPLAY.get(d["name"], d["name"]), "bn": _BN_FIX.get(d["name"], d["bn"]),
+        "division": t.get("division", ""), "fact": t.get("fact", ""), "cx": d["cx"], "cy": d["cy"],
+        "lat": round(BD["lat0"] - d["cy"] / BD["ky"], 3), "lon": round(d["cx"] / BD["kx"] + BD["lon0"], 3)})
+today_start = str(TODAY.get("start_date", "2026-11-17"))
 beyond["visited_list"] = sorted(DISPLAY.get(n, n) for n in visited)
 
 ht = beyond.get("hometown")
@@ -254,7 +267,7 @@ def build():
         shutil.rmtree(OUT)
     shutil.copytree(ROOT / "static", OUT)
     latest_journal = [p for p in pubs if p.get("category") == "journal" and p.get("status") == "published"]
-    render("home.html", "index.html", section="home", districts=district_map, beyond=beyond, news=news[:3], projects=[x for x in projects if x.get("group") == "research"],
+    render("home.html", "index.html", section="home", today_districts=today_districts, today_start=today_start, notebook=TODAY.get("notebook") or [], gallery_pics=[{"src": im, "title": g.get("title", "")} for g in (media.get("gallery") or []) for im in (g.get("images") or [])], districts=district_map, beyond=beyond, news=news[:3], projects=[x for x in projects if x.get("group") == "research"],
            selected=latest_journal[:3], writeups=writeups[:2])
     render("about_experience.html", "about/index.html", section="about", tab="about/", experience=experience,
            title="Experience")

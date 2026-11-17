@@ -68,6 +68,41 @@
   <a href="{{ url('publications/') }}#oped"><b>{{ counts.oped }}</b><span>Op-eds</span></a>
 </section>
 
+{% if today_districts %}{% set td = today_districts[0] %}{% set nb = notebook[0] if notebook else none %}{% set gp = gallery_pics[0] if gallery_pics else none %}
+<section class="wrap today2" id="today" aria-label="Today in Bangladesh">
+  <div class="t2-head"><h2>Today in Bangladesh</h2><span class="mono small" id="t2-date"></span></div>
+  <div class="t2-row">
+    <article class="t2c t2-dist">
+      <svg class="t2-map" viewBox="-10 -10 {{ bd.W + 20 }} {{ bd.H + 20 }}" role="img" aria-label="Map of Bangladesh with the district of the day highlighted">
+        {% for d in beyond.districts %}<path class="dd{% if d.name == td.name %} pick{% endif %}" data-n="{{ d.name }}" d="{{ d.d }}"/>{% endfor %}
+        <path class="outline" d="{{ bd.d }}"/>
+        <g class="dd-pin" id="t2-pin" transform="translate({{ td.cx }},{{ td.cy }})"><circle r="16" class="pulse"/><path d="M0 0c-6-8-10-12-10-18a10 10 0 0 1 20 0c0 6-4 10-10 18z" transform="translate(0,-2)"/><circle cy="-20" r="3.6" fill="#fff"/></g>
+      </svg>
+      <div class="t2-txt">
+        <p class="t2-k">📍 DISTRICT OF THE DAY · <span id="t2-n">1</span>/{{ today_districts|length }}</p>
+        <h3><span id="t2-name">{{ td.label }}</span> <span class="bn" id="t2-bn">{{ td.bn }}</span></h3>
+        <p class="t2-div mono small" id="t2-div">{{ td.division }} Division</p>
+        <p class="t2-fact" id="t2-fact">{{ td.fact }}</p>
+      </div>
+    </article>
+    <article class="t2c t2-wx" id="t2-wx">
+      <div class="wxw-top"><p class="t2-k">WEATHER · <span id="wx-place">{{ td.label|upper }}</span></p><p class="wxw-clock"><b id="wx-time"></b> <span id="wx-date"></span></p></div>
+      <div class="wxw-now"><span class="wxw-ic" id="wx-ic">🌤️</span><b id="wx-t">--°</b><span><span id="wx-s">Loading weather…</span><small id="wx-f">in {{ td.label }} now</small></span></div>
+      <ul class="wxw-row"><li><small>HUMIDITY</small><span id="wx-h">--</span></li><li><small>WIND</small><span id="wx-w">--</span></li><li><small>HIGH / LOW</small><span id="wx-hl">--</span></li><li><small>SUNSET</small><span id="wx-ss">--</span></li></ul>
+    </article>
+    {% if nb %}<article class="t2c t2-nb">
+      <p class="t2-k">✒️ FROM MY NOTEBOOK</p>
+      <p class="t2-q" id="nb-q">"{{ nb.text }}"</p>
+      <a id="nb-a" href="{{ url(nb.url) }}">- <span id="nb-t">{{ nb.title }}</span> · Read →</a>
+    </article>{% endif %}
+    {% if gp %}<a class="t2c t2-ph" id="gp-a" href="{{ url('media/gallery/') }}"><img id="gp-img" src="{{ base }}{{ gp.src|asset }}" alt="{{ gp.title }}" loading="lazy"><span><small>🖼️ FROM THE GALLERY</small><b id="gp-t">{{ gp.title }}</b></span></a>{% endif %}
+  </div>
+  <script type="application/json" id="today-data">{{ {"start": today_start, "d": today_districts, "nb": notebook, "gp": gallery_pics}|tojson }}</script>
+</section>
+{% endif %}
+
+
+
 <section class="wrap section split">
   <div class="split-main">
     <div class="section-head"><h2>Research across Bangladesh</h2><a href="{{ url('research/') }}">All projects →</a></div>
