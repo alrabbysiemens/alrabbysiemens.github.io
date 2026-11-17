@@ -68,7 +68,7 @@
   <a href="{{ url('publications/') }}#oped"><b>{{ counts.oped }}</b><span>Op-eds</span></a>
 </section>
 
-{% if today_districts %}{% set td = today_districts[0] %}{% set nb = notebook[0] if notebook else none %}{% set gp = gallery_pics[0] if gallery_pics else none %}
+{% if today_districts %}{% set td = today_districts[0] %}
 <section class="wrap today2" id="today" aria-label="Today in Bangladesh">
   <div class="t2-head"><h2>Today in Bangladesh</h2><span class="mono small" id="t2-date"></span></div>
   <div class="t2-row">
@@ -90,14 +90,8 @@
       <div class="wxw-now"><span class="wxw-ic" id="wx-ic">🌤️</span><b id="wx-t">--°</b><span><span id="wx-s">Loading weather…</span><small id="wx-f">in {{ td.label }} now</small></span></div>
       <ul class="wxw-row"><li><small>HUMIDITY</small><span id="wx-h">--</span></li><li><small>WIND</small><span id="wx-w">--</span></li><li><small>HIGH / LOW</small><span id="wx-hl">--</span></li><li><small>SUNSET</small><span id="wx-ss">--</span></li></ul>
     </article>
-    {% if nb %}<article class="t2c t2-nb">
-      <p class="t2-k">✒️ FROM MY NOTEBOOK</p>
-      <p class="t2-q" id="nb-q">"{{ nb.text }}"</p>
-      <a id="nb-a" href="{{ url(nb.url) }}">- <span id="nb-t">{{ nb.title }}</span> · Read →</a>
-    </article>{% endif %}
-    {% if gp %}<a class="t2c t2-ph" id="gp-a" href="{{ url('media/gallery/') }}"><img id="gp-img" src="{{ base }}{{ gp.src|asset }}" alt="{{ gp.title }}" loading="lazy"><span><small>🖼️ FROM THE GALLERY</small><b id="gp-t">{{ gp.title }}</b></span></a>{% endif %}
   </div>
-  <script type="application/json" id="today-data">{{ {"start": today_start, "d": today_districts, "nb": notebook, "gp": gallery_pics}|tojson }}</script>
+  <script type="application/json" id="today-data">{{ {"start": today_start, "d": today_districts}|tojson }}</script>
 </section>
 {% endif %}
 
