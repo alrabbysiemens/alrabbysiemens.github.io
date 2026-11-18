@@ -799,3 +799,7 @@ h1 .siem-word{font-size:.95em}
 .t2-map .dd{transition:fill .4s}
 .t2-ph img{background:#ddd}
 .t2-ph img{object-position:50% 22%}
+/* each note keeps its own height (a long note no longer stretches its neighbours) */
+.board{align-items:start}
+.sticky{min-height:200px}
+.sticky.long blockquote{font-size:18px;line-height:1.3}

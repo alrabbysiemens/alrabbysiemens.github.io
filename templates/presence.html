@@ -11,7 +11,7 @@
     {% if notes %}
     {% set colors = ['yellow','mint','sky','pink','peach'] %}
     {% for n in notes %}
-    <figure class="sticky c-{{ n.color or colors[loop.index0 % 5] }} t{{ loop.index % 5 }}">
+    <figure class="sticky c-{{ n.color or colors[loop.index0 % 5] }} t{{ loop.index % 5 }}{% if (n.message|length) > 140 %} long{% endif %}">
       <blockquote>{{ n.message }}</blockquote>
       <figcaption><b>- {{ n.name }}{% if n.date|year %}, {{ n.date|year }}{% endif %}</b>{% if n.location %}<span>{{ n.location }}</span>{% endif %}</figcaption>
     </figure>
