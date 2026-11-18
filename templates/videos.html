@@ -6,7 +6,7 @@
 <div class="wrap vids">
   {% if vp.featured %}
   <section class="v-feat">
-    <button type="button" class="v-feat-play v-card" data-play="yt" data-id="{{ vp.featured }}"><div class="v-th v-big" style="background-image:url('https://i.ytimg.com/vi/{{ vp.featured }}/maxresdefault.jpg'),url('https://i.ytimg.com/vi/{{ vp.featured }}/hqdefault.jpg')"><span class="v-fallback"><b>HSC Geography</b><i>10 Minute School</i></span><span class="v-play">▶</span><span class="v-badge yt">YouTube</span></div></button>
+    <button type="button" class="v-feat-play v-card" data-play="yt" data-id="{{ vp.featured }}"><div class="v-th v-big" data-vid="{{ vp.featured }}"><span class="v-fallback"><b>HSC Geography</b><i>10 Minute School</i></span><span class="v-play">▶</span><span class="v-badge yt">YouTube</span></div></button>
     <div class="v-feat-info"><p class="mono small v-now">NOW PLAYING</p><h2 class="yt-title" data-yt="{{ vp.featured }}">A lesson from my HSC Geography series</h2><p class="muted">From my HSC Geography series at 10 Minute School.</p><a class="v-src yt" href="https://www.youtube.com/watch?v={{ vp.featured }}" target="_blank" rel="noopener">▶ Watch on YouTube ↗</a></div>
   </section>
   {% endif %}
@@ -16,7 +16,7 @@
   <div class="v-g3">
     {% for pl in vp.playlists %}
     <a class="v-pl" href="https://www.youtube.com/playlist?list={{ pl.list }}" target="_blank" rel="noopener">
-      <div class="v-th v-stack" data-yt-list="{{ pl.list }}"><span class="v-fallback"><b class="bn">{{ pl.title }}</b><i>{{ pl.sub }}</i></span><span class="v-cnt">☰ {{ pl.count }} videos</span><span class="v-badge yt">YouTube</span></div>
+      <div class="v-th v-stack" data-yt-list="{{ pl.list }}"{% if pl.thumb %} data-vid="{{ pl.thumb }}"{% endif %}><span class="v-fallback"><b class="bn">{{ pl.title }}</b><i>{{ pl.sub }}</i></span><span class="v-cnt">☰ {{ pl.count }} videos</span><span class="v-badge yt">YouTube</span></div>
       <b class="bn">{{ pl.title }}</b><small>{{ pl.sub }} · {{ pl.channel }}</small><span class="v-src yt">☰ Watch the playlist on YouTube ↗</span>
     </a>
     {% endfor %}
@@ -29,7 +29,7 @@
   <div class="v-grid">
     {% for v in vp[key] %}{% set vid = v.id if v is mapping else v %}
     <div class="v-item"><button type="button" class="v-card" data-play="yt" data-id="{{ vid }}">
-      <div class="v-th" style="background-image:url('https://i.ytimg.com/vi/{{ vid }}/hqdefault.jpg')"><span class="v-fallback"><b>{{ label }}</b><i>Lesson {{ loop.index }}</i></span><span class="v-play">▶</span><span class="v-badge yt">YouTube</span></div>
+      <div class="v-th" data-vid="{{ vid }}"><span class="v-fallback"><b>{{ label }}</b><i>Lesson {{ loop.index }}</i></span><span class="v-play">▶</span><span class="v-badge yt">YouTube</span></div>
       <b class="yt-title" data-yt="{{ vid }}">{{ v.title if v is mapping and v.title else label ~ ' · Lesson ' ~ loop.index }}</b><small>10 Minute School</small>
     </button>
     <a class="v-src yt" href="https://www.youtube.com/watch?v={{ vid }}" target="_blank" rel="noopener">▶ Watch on YouTube ↗</a></div>

@@ -136,13 +136,17 @@
         if (d && d.thumbnail_url) { var i = new Image(); i.onload = function () { el.style.backgroundImage = 'url(' + d.thumbnail_url + ')'; el.classList.add('has-img'); }; i.src = d.thumbnail_url; }
       }).catch(function () {});
     });
-    // show real thumbnails only when they actually load; otherwise keep the drawn cover
-    document.querySelectorAll('.v-th').forEach(function (el) {
-      var m = (el.getAttribute('style') || '').match(/url\(['"]?([^'")]+)/);
-      if (!m) return;
+    // real YouTube thumbnails: try the sharpest size first, skip YouTube's grey 120px placeholder
+    function setThumb(el, urls) {
+      if (!urls.length || el.classList.contains('has-img')) return;
       var img = new Image();
-      img.onload = function () { if (img.naturalWidth > 120) el.classList.add('has-img'); };
-      img.src = m[1];
+      img.onload = function () { if (img.naturalWidth > 120) { el.style.backgroundImage = 'url(' + urls[0] + ')'; el.classList.add('has-img'); } else setThumb(el, urls.slice(1)); };
+      img.onerror = function () { setThumb(el, urls.slice(1)); };
+      img.src = urls[0];
+    }
+    document.querySelectorAll('.v-th[data-vid]').forEach(function (el) {
+      var v = el.getAttribute('data-vid'), big = el.classList.contains('v-big');
+      setThumb(el, (big ? ['maxresdefault', 'sddefault', 'hqdefault', 'mqdefault'] : ['hqdefault', 'mqdefault']).map(function (q) { return 'https://i.ytimg.com/vi/' + v + '/' + q + '.jpg'; }));
     });
     var modal = document.getElementById('v-modal'), frame = document.getElementById('v-frame'), out = document.getElementById('v-out');
     function close() { modal.hidden = true; frame.innerHTML = ''; document.body.classList.remove('note-lock'); }
