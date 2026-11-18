@@ -128,8 +128,25 @@
   (function () {
     if (!document.querySelector('.vids')) return;
     function oembed(url) { return fetch('https://noembed.com/embed?url=' + encodeURIComponent(url)).then(function (r) { return r.json(); }); }
+    var feat = document.querySelector('.v-feat[data-match]'), featDone = false;
+    function pinFeatured(id, title, card) {
+      if (featDone || !feat) return; featDone = true;
+      var btn = feat.querySelector('.v-feat-play'), th = feat.querySelector('.v-th'), h = feat.querySelector('.yt-title');
+      btn.setAttribute('data-id', id); th.setAttribute('data-vid', id); th.classList.remove('has-img'); th.style.backgroundImage = '';
+      setThumb(th, ['maxresdefault', 'sddefault', 'hqdefault', 'mqdefault'].map(function (q) { return 'https://i.ytimg.com/vi/' + id + '/' + q + '.jpg'; }));
+      h.setAttribute('data-yt', id); h.textContent = title;
+      feat.querySelector('.v-feat-link').href = 'https://www.youtube.com/watch?v=' + id;
+      if (feat.getAttribute('data-note')) feat.querySelector('.v-feat-note').textContent = feat.getAttribute('data-note');
+      var fb = feat.querySelector('.v-fallback b'); if (fb) fb.textContent = 'BCS Preliminary';
+      // also move that video to the front of its own section
+      var item = card && card.closest('.v-item'); if (item && item.parentNode) item.parentNode.insertBefore(item, item.parentNode.firstChild);
+    }
     document.querySelectorAll('[data-yt]').forEach(function (el) {
-      oembed('https://www.youtube.com/watch?v=' + el.getAttribute('data-yt')).then(function (d) { if (d && d.title) el.textContent = d.title; }).catch(function () {});
+      var id = el.getAttribute('data-yt');
+      oembed('https://www.youtube.com/watch?v=' + id).then(function (d) {
+        if (!d || !d.title) return; el.textContent = d.title;
+        if (feat && !el.closest('.v-feat') && d.title.indexOf(feat.getAttribute('data-match')) !== -1) pinFeatured(id, d.title, el);
+      }).catch(function () {});
     });
     document.querySelectorAll('[data-yt-list]').forEach(function (el) {
       oembed('https://www.youtube.com/playlist?list=' + el.getAttribute('data-yt-list')).then(function (d) {

@@ -23,6 +23,9 @@ press:
 # Videos page. Titles of YouTube videos load automatically; add "title:" to any item to set it yourself.
 video_page:
   featured: jLMz4R70NjI
+  # Pin a video on top by part of its YouTube title (it is found among the videos below). Leave empty to use "featured".
+  featured_match: "২০০টি প্রশ্ন"
+  featured_note: "BCS Preliminary preparation: Geography, Environment and Disaster Management."
   playlists:
     - { title: "এইচএসসি ভূগোল ১ম পত্র", sub: HSC Geography 1st Paper, count: 112, list: PLuaHF6yUT-71Zl7qkIVTCCjFn6kJJDXEj, channel: 10 Minute School }
     - { title: "এইচএসসি ভূগোল ২য় পত্র", sub: HSC Geography 2nd Paper, count: 101, list: PLuaHF6yUT-71yrQM0HXwC3h58HE6RxT1J, channel: 10 Minute School }

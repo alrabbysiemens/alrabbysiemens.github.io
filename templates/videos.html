@@ -5,9 +5,9 @@
 {% from "_sec_icons.html" import sec_icon %}
 <div class="wrap vids">
   {% if vp.featured %}
-  <section class="v-feat">
+  <section class="v-feat"{% if vp.featured_match %} data-match="{{ vp.featured_match }}" data-note="{{ vp.featured_note }}"{% endif %}>
     <button type="button" class="v-feat-play v-card" data-play="yt" data-id="{{ vp.featured }}"><div class="v-th v-big" data-vid="{{ vp.featured }}"><span class="v-fallback"><b>HSC Geography</b><i>10 Minute School</i></span><span class="v-play">▶</span><span class="v-badge yt">YouTube</span></div></button>
-    <div class="v-feat-info"><p class="mono small v-now">NOW PLAYING</p><h2 class="yt-title" data-yt="{{ vp.featured }}">A lesson from my HSC Geography series</h2><p class="muted">From my HSC Geography series at 10 Minute School.</p><a class="v-src yt" href="https://www.youtube.com/watch?v={{ vp.featured }}" target="_blank" rel="noopener">▶ Watch on YouTube ↗</a></div>
+    <div class="v-feat-info"><p class="mono small v-now">NOW PLAYING</p><h2 class="yt-title" data-yt="{{ vp.featured }}">A lesson from my HSC Geography series</h2><p class="muted v-feat-note">From my HSC Geography series at 10 Minute School.</p><a class="v-src yt v-feat-link" href="https://www.youtube.com/watch?v={{ vp.featured }}" target="_blank" rel="noopener">▶ Watch on YouTube ↗</a></div>
   </section>
   {% endif %}
 
